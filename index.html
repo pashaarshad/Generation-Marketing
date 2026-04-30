@@ -17,7 +17,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#home"><i class="fas fa-chart-line"></i> Generation <span>Marketing</span></a>
+            <a class="navbar-brand" href="#home"><img src="assets/logo.png" alt="Generation Marketing" style="max-height: 50px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navMenu">
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
-                    <div class="hero-badge"><i class="fas fa-star"></i> #1 Digital Marketing Agency</div>
+                    <div class="hero-badge"><i class="fas fa-rocket"></i> Premium Digital Marketing Agency</div>
                     <h1>More <span class="highlight" id="typewriter">Visibility</span>.<br>More Leads. More Growth.</h1>
                     <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium
                         Branding solutions. Results you can measure.</p>
@@ -70,9 +70,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-image d-none d-lg-block text-center">
-                    <img src="Main-color-theam-poster-for-this-website.jpeg" alt="Google Ads Package"
-                        style="max-height:520px; border-radius:20px;">
+                <div class="col-lg-6 hero-image d-none d-lg-block text-center position-relative">
+                    <div class="hero-shape-right"></div>
+                    <img src="assets/hero-graph.png" alt="Growth and Leads"
+                        style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
                 </div>
             </div>
         </div>
@@ -90,14 +91,14 @@
             <div class="row g-4 mb-5">
                 <div class="col-md-6 col-lg-3 reveal">
                     <div class="about-card">
-                        <div class="icon-box icon-blue"><i class="fas fa-bullseye"></i></div>
+                        <div class="icon-box icon-blue"><i class="fa-solid fa-crosshairs"></i></div>
                         <h5>Targeted Strategy</h5>
                         <p>Data-driven campaigns tailored to your business goals for maximum ROI and growth.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 reveal">
                     <div class="about-card">
-                        <div class="icon-box icon-red"><i class="fas fa-chart-line"></i></div>
+                        <div class="icon-box icon-red"><i class="fa-solid fa-arrow-trend-up"></i></div>
                         <h5>Proven Results</h5>
                         <p>Track record of delivering measurable results — higher rankings, more traffic, better
                             conversions.</p>
@@ -105,7 +106,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 reveal">
                     <div class="about-card">
-                        <div class="icon-box icon-yellow"><i class="fas fa-lightbulb"></i></div>
+                        <div class="icon-box icon-yellow"><i class="fa-regular fa-lightbulb"></i></div>
                         <h5>Creative Excellence</h5>
                         <p>Stunning designs, compelling content, and innovative marketing that makes your brand stand
                             out.</p>
@@ -113,7 +114,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 reveal">
                     <div class="about-card">
-                        <div class="icon-box icon-green"><i class="fas fa-headset"></i></div>
+                        <div class="icon-box icon-green"><i class="fa-solid fa-handshake-angle"></i></div>
                         <h5>Dedicated Support</h5>
                         <p>A dedicated team committed to your success with weekly reports and transparent communication.
                         </p>
@@ -124,35 +125,39 @@
                 <div class="col-12">
                     <h4 class="text-center mb-4 reveal" style="color:var(--navy)">Our Simple Process</h4>
                 </div>
-                <div class="col-6 col-md reveal">
+                <div class="col-6 col-md reveal position-relative process-col">
                     <div class="process-step">
                         <div class="step-num">1</div>
                         <h5>Discover</h5>
                         <p>Understanding your business & goals</p>
                     </div>
+                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
                 </div>
-                <div class="col-6 col-md reveal">
+                <div class="col-6 col-md reveal position-relative process-col">
                     <div class="process-step">
                         <div class="step-num">2</div>
                         <h5>Plan</h5>
                         <p>Strategize the perfect solution</p>
                     </div>
+                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
                 </div>
-                <div class="col-6 col-md reveal">
+                <div class="col-6 col-md reveal position-relative process-col">
                     <div class="process-step">
                         <div class="step-num">3</div>
                         <h5>Design</h5>
                         <p>Create stunning UI/UX</p>
                     </div>
+                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
                 </div>
-                <div class="col-6 col-md reveal">
+                <div class="col-6 col-md reveal position-relative process-col">
                     <div class="process-step">
                         <div class="step-num">4</div>
                         <h5>Execute</h5>
                         <p>Launch & optimize campaigns</p>
                     </div>
+                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
                 </div>
-                <div class="col-6 col-md reveal">
+                <div class="col-6 col-md reveal position-relative process-col">
                     <div class="process-step">
                         <div class="step-num">5</div>
                         <h5>Deliver</h5>
@@ -194,8 +199,7 @@
                                 <li><i class="fas fa-check-circle"></i>Advanced Keyword Research</li>
                                 <li><i class="fas fa-check-circle"></i>Conversion Tracking & Remarketing</li>
                             </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/google-ads-package.jpeg"
+                            <a href="service-details.html?id=google-ads-package.jpeg"
                                 data-title="Google Ads Package"><i class="fas fa-eye"></i> View Full Details</button>
                         </div>
                     </div>
@@ -214,8 +218,7 @@
                                 <li><i class="fas fa-check-circle"></i>A/B Testing & Retargeting</li>
                             </ul>
                             <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/meta-ad-package.jpeg" data-title="Meta Ad Package"><i
-                                    class="fas fa-eye"></i> View Full Details</button>
+                                data-poster="Services-posters/meta-ad-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -232,9 +235,7 @@
                                 <li><i class="fas fa-check-circle"></i>10-15 Keywords Research</li>
                                 <li><i class="fas fa-check-circle"></i>On-Page SEO & GMB Optimization</li>
                             </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/seo-starter-plan.jpeg" data-title="SEO Starter Plan"><i
-                                    class="fas fa-eye"></i> View Full Details</button>
+                            <a href="service-details.html?id=seo-starter-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -252,9 +253,7 @@
                                 <li><i class="fas fa-check-circle"></i>10-15 Quality Backlinks</li>
                                 <li><i class="fas fa-check-circle"></i>Weekly Report + Strategy</li>
                             </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/growth-seo-plan.jpeg" data-title="Growth SEO Plan"><i
-                                    class="fas fa-eye"></i> View Full Details</button>
+                            <a href="service-details.html?id=growth-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -271,9 +270,7 @@
                                 <li><i class="fas fa-check-circle"></i>20-30 High Quality Backlinks</li>
                                 <li><i class="fas fa-check-circle"></i>Dedicated Support & Weekly Optimization</li>
                             </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/pro-seo-plan.jpeg" data-title="Pro SEO Plan"><i
-                                    class="fas fa-eye"></i> View Full Details</button>
+                            <a href="service-details.html?id=pro-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -624,7 +621,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/google-ads-package.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">Google Ads</span>
                             <h5>5 Reasons Your Business Needs Google Ads in 2026</h5>
                             <p>Discover why Google Ads is the fastest way to generate high-quality leads and drive
@@ -635,7 +632,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/growth-seo-plan.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">SEO</span>
                             <h5>SEO vs Paid Ads: Which Strategy is Right for You?</h5>
                             <p>A comprehensive comparison to help you decide whether to invest in organic SEO, paid
@@ -646,7 +643,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/premium-brand-system.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">Branding</span>
                             <h5>How to Build a Brand That Stands Out in the Market</h5>
                             <p>Learn the essential steps to create a powerful brand identity that connects, inspires,
@@ -657,7 +654,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/smm-all-packages.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">Social Media</span>
                             <h5>Social Media Marketing: A Complete Beginner's Guide</h5>
                             <p>Everything you need to know about leveraging social media platforms to grow your brand
@@ -668,7 +665,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/ecommerce-website-setup.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">E-Commerce</span>
                             <h5>E-Commerce Success: Setting Up Your Online Store Right</h5>
                             <p>Step-by-step guide to launching a professional, high-converting e-commerce store on
@@ -679,7 +676,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="blog-card">
-                        <div class="blog-img"><img src="Services-posters/meta-ad-package.jpeg" alt="Blog"></div>
+                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
                         <div class="blog-body"><span class="blog-tag">Meta Ads</span>
                             <h5>The Power of Meta Ads for Local Business Growth</h5>
                             <p>How local businesses can use Facebook and Instagram ads to reach nearby customers and
