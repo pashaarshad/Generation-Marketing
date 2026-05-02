@@ -36,55 +36,77 @@
         </div>
     </nav>
 
+
     <!-- HERO -->
     <section class="hero" id="home">
-        <!-- Background Elements -->
-        <div class="hero-bg-icons">
-            <i class="fas fa-arrow-trend-up icon-float" style="top: 10%; left: 5%;"></i>
-            <i class="fas fa-lightbulb icon-float" style="top: 80%; left: 15%;"></i>
-            <i class="fas fa-bullseye icon-float" style="top: 15%; right: 40%;"></i>
-            <i class="fas fa-rocket icon-float" style="bottom: 10%; right: 5%;"></i>
-            <i class="fas fa-chart-pie icon-float" style="top: 50%; left: 2%;"></i>
-        </div>
-        <div class="glowing-divider"></div>
 
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
-                    <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br>Growth.</h1>
-                    <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium
-                        Branding solutions. Results you can measure.</p>
-                    <div class="hero-btns">
-                        <a href="#services" class="btn-glow"><i class="fas fa-arrow-right"></i> Explore Services</a>
-                        <a href="#contact" class="btn-outline-hero"><i class="fas fa-phone"></i> Talk to Us</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">0</span>
-                            </div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="200" data-suffix="+">0</span>
-                            </div>
-                            <div class="stat-label">Campaigns Run</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="95" data-suffix="%">0</span>
-                            </div>
-                            <div class="stat-label">Client Retention</div>
-                        </div>
-                    </div>
+        <!-- Particle dots background canvas -->
+        <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.5;"></canvas>
+
+        <!-- floating micro icons -->
+        <div class="hero-bg-icons">
+            <i class="fas fa-arrow-trend-up icon-float" style="top:12%;left:4%;animation-delay:0s;"></i>
+            <i class="fas fa-lightbulb icon-float" style="bottom:18%;left:12%;animation-delay:-4s;"></i>
+            <i class="fas fa-chart-bar icon-float" style="top:20%;left:25%;animation-delay:-2s;"></i>
+            <i class="fas fa-rocket icon-float" style="bottom:12%;right:8%;animation-delay:-6s;"></i>
+            <i class="fas fa-bullseye icon-float" style="top:10%;right:12%;animation-delay:-3s;"></i>
+        </div>
+
+        <div class="hero-inner">
+
+            <!-- ── LEFT COLUMN ── -->
+            <div class="hero-left">
+                <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
+
+                <h1 class="hero-heading">
+                    More <span class="grad-text">Growth</span><span class="yellow-dot">.</span><br>
+                    More Leads. More<br>Growth.
+                </h1>
+
+                <p class="hero-sub">We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium Branding solutions. Results you can measure.</p>
+
+                <div class="hero-btns">
+                    <a href="#services" class="btn-glow"><i class="fas fa-arrow-right"></i> Explore Services</a>
+                    <a href="#contact" class="btn-outline-hero"><i class="fas fa-phone"></i> Talk to Us</a>
                 </div>
-                <div class="col-lg-6 hero-image d-none d-lg-block text-center position-relative">
-                    <div class="hero-shape-right"></div>
-                    <img src="assets/hero-graph.png" alt="Growth and Leads"
-                        style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">0</span></div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="200" data-suffix="+">0</span></div>
+                        <div class="stat-label">Campaigns Run</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="95" data-suffix="%">0</span></div>
+                        <div class="stat-label">Client Retention</div>
+                    </div>
                 </div>
             </div>
+
+            <!-- ── CENTER GLOW X ── -->
+            <div class="hero-center" aria-hidden="true">
+                <div class="glow-x">
+                    <div class="glow-line line-1"></div>
+                    <div class="glow-line line-2"></div>
+                    <div class="glow-orb"></div>
+                </div>
+            </div>
+
+            <!-- ── RIGHT COLUMN ── -->
+            <div class="hero-right">
+                <h2 class="hero-right-title">MAXIMIZE <span class="grad-text">DIGITAL</span><br>MARKETING GROWTH</h2>
+                <div class="hero-img-wrap">
+                    <div class="img-glow-ring"></div>
+                    <img src="assets/bg-transparent.png" alt="Digital Marketing Growth" class="hero-img-main">
+                </div>
+            </div>
+
         </div>
     </section>
+
 
     <!-- ABOUT -->
     <section class="section-padding" id="about">
@@ -1045,6 +1067,52 @@
     <button class="back-to-top"><i class="fas fa-chevron-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hero Particle Canvas -->
+    <script>
+    (function(){
+      const canvas = document.getElementById('heroCanvas');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+
+      function resize(){
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const COLORS = ['rgba(66,133,244,VAL)','rgba(0,210,255,VAL)','rgba(120,80,255,VAL)','rgba(251,188,4,VAL)'];
+
+      for(let i=0;i<90;i++){
+        particles.push({
+          x: Math.random()*2000,
+          y: Math.random()*900,
+          r: Math.random()*2+0.5,
+          dx: (Math.random()-0.5)*0.3,
+          dy: (Math.random()-0.5)*0.3,
+          color: COLORS[Math.floor(Math.random()*COLORS.length)]
+        });
+      }
+
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+        particles.forEach(p=>{
+          p.x+=p.dx; p.y+=p.dy;
+          if(p.x<0||p.x>W) p.dx*=-1;
+          if(p.y<0||p.y>H) p.dy*=-1;
+          ctx.beginPath();
+          ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fillStyle = p.color.replace('VAL','0.7');
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+    </script>
+
     <script src="script.js"></script>
 </body>
 
