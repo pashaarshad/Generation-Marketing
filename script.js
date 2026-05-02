@@ -95,19 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Typewriter effect ---
   const typeEl = document.getElementById('typewriter');
   if (typeEl) {
-    const words = ['Visibility', 'Leads', 'Growth', 'Revenue', 'Success'];
+    const words = ['Growth', 'Leads', 'Revenue', 'Success', 'Visibility', 'Profit'];
     let wordIdx = 0, charIdx = 0, deleting = false;
     function type() {
       const word = words[wordIdx];
       typeEl.textContent = word.substring(0, charIdx);
       if (!deleting) {
         charIdx++;
-        if (charIdx > word.length) { deleting = true; setTimeout(type, 1500); return; }
+        if (charIdx > word.length) { deleting = true; setTimeout(type, 1800); return; }
       } else {
         charIdx--;
         if (charIdx === 0) { deleting = false; wordIdx = (wordIdx + 1) % words.length; }
       }
-      setTimeout(type, deleting ? 50 : 100);
+      setTimeout(type, deleting ? 45 : 90);
     }
     type();
   }
@@ -147,11 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (carousel) new bootstrap.Carousel(carousel, { interval: 5000, ride: 'carousel' });
 });
 
-// CSS for reveal animation
+// CSS for reveal animation + typewriter cursor
 const style = document.createElement('style');
 style.textContent = `
   .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.6s ease, transform 0.6s ease; }
   .revealed { opacity:1; transform:translateY(0); }
   @keyframes fadeInUp { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)} }
+  #typewriter::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 2px;
+    color: #4285F4;
+    animation: blink 0.75s step-end infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 `;
 document.head.appendChild(style);
