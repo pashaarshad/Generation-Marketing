@@ -17,7 +17,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#home"><img src="assets/logo.png" alt="Generation Marketing" style="max-height: 50px;"></a>
+            <a class="navbar-brand" href="#home"><img src="assets/logo.png" alt="Generation Marketing"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navMenu">
@@ -38,14 +38,21 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="container">
+        <!-- Background Elements -->
+        <div class="hero-bg-icons">
+            <i class="fas fa-arrow-trend-up icon-float" style="top: 10%; left: 5%;"></i>
+            <i class="fas fa-lightbulb icon-float" style="top: 80%; left: 15%;"></i>
+            <i class="fas fa-bullseye icon-float" style="top: 15%; right: 40%;"></i>
+            <i class="fas fa-rocket icon-float" style="bottom: 10%; right: 5%;"></i>
+            <i class="fas fa-chart-pie icon-float" style="top: 50%; left: 2%;"></i>
+        </div>
+        <div class="glowing-divider"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
-                    <div class="hero-badge"><i class="fas fa-rocket"></i> Premium Digital Marketing Agency</div>
-                    <h1>More <span class="highlight" id="typewriter">Visibility</span>.<br>More Leads. More Growth.</h1>
+                    <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
+                    <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br>Growth.</h1>
                     <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium
                         Branding solutions. Results you can measure.</p>
                     <div class="hero-btns">
