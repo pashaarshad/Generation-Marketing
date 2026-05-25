@@ -25,10 +25,10 @@
     <!-- Fixed Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom scrolled" style="background: white !important; box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; padding: 10px 0 !important;">
         <div class="container">
-            <a class="navbar-brand text-dark" href="index.html" style="color: var(--navy) !important;">
+            <a class="navbar-brand text-dark" href="index.php" style="color: var(--navy) !important;">
                 <img src="assets/logo.png" alt="Generation Marketing" style="max-height: 45px;">
             </a>
-            <a href="index.html#services" class="nav-link text-dark ms-auto d-flex align-items-center gap-2">
+            <a href="index.php#services" class="nav-link text-dark ms-auto d-flex align-items-center gap-2">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
         </div>
@@ -39,7 +39,7 @@
         <div class="container mt-4">
             <div class="row align-items-center mb-5">
                 <div class="col-12 mb-4">
-                    <a href="index.html#services" class="btn btn-outline-secondary rounded-pill px-4">
+                    <a href="index.php#services" class="btn btn-outline-secondary rounded-pill px-4">
                         <i class="fas fa-arrow-left me-2"></i> All Services
                     </a>
                 </div>
@@ -61,7 +61,7 @@
                     </ul>
 
                     <div class="d-flex flex-wrap gap-3 mt-5">
-                        <a href="index.html#contact" class="btn-glow text-white text-decoration-none px-5 py-3 rounded-pill">
+                        <a href="index.php#contact" class="btn-glow text-white text-decoration-none px-5 py-3 rounded-pill">
                             <i class="fas fa-rocket"></i> Get Started Now
                         </a>
                         <a href="https://wa.me/918306156521" target="_blank" class="btn btn-outline-success rounded-pill px-4 py-3 fw-bold" style="border-width: 2px;">

@@ -1,0 +1,8 @@
+# Disable PHP execution in uploads directory
+<FilesMatch "\.(php|php5|phtml|php3|php4|phps|pl|py|jsp|asp|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Only allow safe media files
+Options -Indexes

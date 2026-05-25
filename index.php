@@ -1,3 +1,28 @@
+<?php
+// Load blogs from JSON
+$json_path = __DIR__ . '/data/blogs.json';
+$blogs = [];
+if (file_exists($json_path)) {
+    $blogs_data = file_get_contents($json_path);
+    $blogs = json_decode($blogs_data, true);
+    if (!is_array($blogs)) {
+        $blogs = [];
+    }
+}
+
+// Filter published blogs
+$published_blogs = array_filter($blogs, function($blog) {
+    return isset($blog['status']) && $blog['status'] === 'published';
+});
+
+// Sort by date descending
+usort($published_blogs, function($a, $b) {
+    return strtotime($b['created_at']) - strtotime($a['created_at']);
+});
+
+// Limit to latest 6 for homepage
+$latest_blogs = array_slice($published_blogs, 0, 6);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -206,7 +231,7 @@
                                 <li><i class="fas fa-check-circle"></i>Advanced Keyword Research</li>
                                 <li><i class="fas fa-check-circle"></i>Conversion Tracking & Remarketing</li>
                             </ul>
-                            <a href="service-details.html?id=google-ads-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
+                            <a href="service-details.php?id=google-ads-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +248,7 @@
                                 <li><i class="fas fa-check-circle"></i>10 Creatives (Post + Reels)</li>
                                 <li><i class="fas fa-check-circle"></i>A/B Testing & Retargeting</li>
                             </ul>
-                            <a href="service-details.html?id=meta-ad-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
+                            <a href="service-details.php?id=meta-ad-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -240,7 +265,7 @@
                                 <li><i class="fas fa-check-circle"></i>10-15 Keywords Research</li>
                                 <li><i class="fas fa-check-circle"></i>On-Page SEO & GMB Optimization</li>
                             </ul>
-                            <a href="service-details.html?id=seo-starter-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
+                            <a href="service-details.php?id=seo-starter-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -258,7 +283,7 @@
                                 <li><i class="fas fa-check-circle"></i>10-15 Quality Backlinks</li>
                                 <li><i class="fas fa-check-circle"></i>Weekly Report + Strategy</li>
                             </ul>
-                            <a href="service-details.html?id=growth-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
+                            <a href="service-details.php?id=growth-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -275,7 +300,7 @@
                                 <li><i class="fas fa-check-circle"></i>20-30 High Quality Backlinks</li>
                                 <li><i class="fas fa-check-circle"></i>Dedicated Support & Weekly Optimization</li>
                             </ul>
-                            <a href="service-details.html?id=pro-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
+                            <a href="service-details.php?id=pro-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
                         </div>
                     </div>
                 </div>
@@ -624,72 +649,30 @@
                 <div class="accent-line"></div>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">Google Ads</span>
-                            <h5>5 Reasons Your Business Needs Google Ads in 2026</h5>
-                            <p>Discover why Google Ads is the fastest way to generate high-quality leads and drive
-                                measurable business growth this year.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
+                <?php if (empty($latest_blogs)): ?>
+                    <div class="col-12 text-center reveal">
+                        <p class="lead" style="color: var(--gray);">No blog posts found. Check back later!</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">SEO</span>
-                            <h5>SEO vs Paid Ads: Which Strategy is Right for You?</h5>
-                            <p>A comprehensive comparison to help you decide whether to invest in organic SEO, paid
-                                advertising, or a combination of both.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
+                <?php else: ?>
+                    <?php foreach ($latest_blogs as $blog): ?>
+                        <?php 
+                        $image_src = htmlspecialchars($blog['image']);
+                        if (!empty($blog['image']) && !preg_match('/^https?:\/\//', $blog['image'])) {
+                            $image_src = 'uploads/blogs/' . htmlspecialchars($blog['image']);
+                        }
+                        ?>
+                        <div class="col-md-6 col-lg-4 reveal">
+                            <div class="blog-card">
+                                <div class="blog-img"><img src="<?php echo $image_src; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>"></div>
+                                <div class="blog-body"><span class="blog-tag"><?php echo htmlspecialchars($blog['category']); ?></span>
+                                    <h5><?php echo htmlspecialchars($blog['title']); ?></h5>
+                                    <p><?php echo htmlspecialchars($blog['excerpt']); ?></p>
+                                    <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">Branding</span>
-                            <h5>How to Build a Brand That Stands Out in the Market</h5>
-                            <p>Learn the essential steps to create a powerful brand identity that connects, inspires,
-                                and converts your target audience.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">Social Media</span>
-                            <h5>Social Media Marketing: A Complete Beginner's Guide</h5>
-                            <p>Everything you need to know about leveraging social media platforms to grow your brand
-                                and engage your audience effectively.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">E-Commerce</span>
-                            <h5>E-Commerce Success: Setting Up Your Online Store Right</h5>
-                            <p>Step-by-step guide to launching a professional, high-converting e-commerce store on
-                                Shopify or WooCommerce in 2026.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="blog-card">
-                        <div class="blog-img"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Blog"></div>
-                        <div class="blog-body"><span class="blog-tag">Meta Ads</span>
-                            <h5>The Power of Meta Ads for Local Business Growth</h5>
-                            <p>How local businesses can use Facebook and Instagram ads to reach nearby customers and
-                                drive foot traffic to their stores.</p><a href="#" class="read-more">Read More <i
-                                    class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </section>
