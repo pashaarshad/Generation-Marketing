@@ -22,10 +22,17 @@ if (!function_exists('shell_exec')) {
 }
 
 $project_root = __DIR__;
+$old_cwd = getcwd();
+
+// Change directory to project root so git commands run correctly
+if (!chdir($project_root)) {
+    http_response_code(500);
+    echo "Error: Failed to change directory to project root.";
+    exit;
+}
 
 // Commands to pull the latest changes from GitHub
 $commands = [
-    "cd " . escapeshellarg($project_root),
     "git fetch origin 2>&1",
     "git reset --hard origin/main 2>&1"
 ];
@@ -40,6 +47,11 @@ foreach ($commands as $cmd) {
 }
 
 $output[] = "========================================\n";
+
+// Restore the original working directory
+if ($old_cwd) {
+    chdir($old_cwd);
+}
 
 // Log output for debugging
 file_put_contents($project_root . '/data/deploy-webhook.log', implode("\n", $output) . "\n", FILE_APPEND);

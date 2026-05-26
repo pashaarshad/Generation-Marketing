@@ -10,10 +10,15 @@ function git_auto_sync($message = "Update blogs from Admin Panel") {
     }
     
     $project_root = dirname(__DIR__);
+    $old_cwd = getcwd();
+    
+    // Change directory to project root so git commands run correctly
+    if (!chdir($project_root)) {
+        return false;
+    }
     
     // Commands to execute sequentially
     $commands = [
-        "cd " . escapeshellarg($project_root),
         "git add data/blogs.json uploads/blogs/ 2>&1",
         "git commit -m " . escapeshellarg($message) . " 2>&1",
         "git push origin main 2>&1"
@@ -27,6 +32,11 @@ function git_auto_sync($message = "Update blogs from Admin Panel") {
         $output[] = $result ? trim($result) : "(no output)";
     }
     $output[] = "--------------------------------------\n";
+    
+    // Restore the original working directory
+    if ($old_cwd) {
+        chdir($old_cwd);
+    }
     
     // Write log to data folder
     file_put_contents($project_root . '/data/git-sync.log', implode("\n", $output) . "\n", FILE_APPEND);
