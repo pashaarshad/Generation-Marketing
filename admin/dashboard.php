@@ -2,6 +2,18 @@
 require_once dirname(__DIR__) . '/config/auth.php';
 require_login();
 
+// Check for manual sync trigger
+if (isset($_GET['sync']) && $_GET['sync'] === 'now') {
+    require_once dirname(__DIR__) . '/config/git-sync.php';
+    $sync_result = git_auto_sync("Manual sync from Admin Panel");
+    if ($sync_result) {
+        header('Location: dashboard.php?success=' . urlencode('Git sync triggered successfully! Check logs below.'));
+    } else {
+        header('Location: dashboard.php?error=' . urlencode('Failed to trigger Git sync (shell_exec might be disabled).'));
+    }
+    exit;
+}
+
 // Load blogs from JSON
 $json_path = dirname(__DIR__) . '/data/blogs.json';
 $blogs = [];
@@ -31,6 +43,44 @@ usort($blogs, function($a, $b) {
 });
 
 $success_msg = $_GET['success'] ?? '';
+$error_msg = $_GET['error'] ?? '';
+
+// Collect Git Diagnostics
+$diagnostics = '';
+if (function_exists('shell_exec')) {
+    $old_cwd = getcwd();
+    chdir(dirname(__DIR__));
+    $diagnostics .= "PHP User: " . (function_exists('posix_getpwuid') && function_exists('posix_geteuid') ? posix_getpwuid(posix_geteuid())['name'] : 'unknown') . "\n";
+    $diagnostics .= "Git Remote: " . shell_exec("git remote -v 2>&1") . "\n";
+    $diagnostics .= "Git Status: " . shell_exec("git status 2>&1") . "\n";
+    $diagnostics .= "SSH Connection Test: " . shell_exec("ssh -T git@github.com 2>&1") . "\n";
+    chdir($old_cwd);
+} else {
+    $diagnostics = "shell_exec is disabled.";
+}
+
+// Load logs
+$git_sync_log_path = dirname(__DIR__) . '/data/git-sync.log';
+$git_sync_log = '';
+if (file_exists($git_sync_log_path)) {
+    $git_sync_log = file_get_contents($git_sync_log_path);
+    if (strlen($git_sync_log) > 2000) {
+        $git_sync_log = "..." . substr($git_sync_log, -2000);
+    }
+} else {
+    $git_sync_log = "No sync log found yet. Add/edit a blog post or click 'Sync to GitHub' to create the log.";
+}
+
+$deploy_log_path = dirname(__DIR__) . '/data/deploy-webhook.log';
+$deploy_log = '';
+if (file_exists($deploy_log_path)) {
+    $deploy_log = file_get_contents($deploy_log_path);
+    if (strlen($deploy_log) > 2000) {
+        $deploy_log = "..." . substr($deploy_log, -2000);
+    }
+} else {
+    $deploy_log = "No deployment webhook log found yet. Pings to deploy.php will populate this log.";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,6 +139,14 @@ $success_msg = $_GET['success'] ?? '';
                 <div class="alert alert-success alert-dismissible fade show d-flex align-items-center gap-2 py-3 mb-4" role="alert" style="border-radius: 12px;">
                     <i class="fas fa-check-circle fs-5"></i>
                     <div style="font-weight: 500;"><?php echo htmlspecialchars($success_msg); ?></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($error_msg)): ?>
+                <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center gap-2 py-3 mb-4" role="alert" style="border-radius: 12px;">
+                    <i class="fas fa-exclamation-circle fs-5"></i>
+                    <div style="font-weight: 500;"><?php echo htmlspecialchars($error_msg); ?></div>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php endif; ?>
@@ -197,6 +255,42 @@ $success_msg = $_GET['success'] ?? '';
                             <?php endif; ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <!-- Git Diagnostics & logs section -->
+            <div class="content-card mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 style="color: var(--navy); font-weight: 700; margin: 0;">Git & Deployment Diagnostics</h4>
+                    <div class="d-flex gap-2">
+                        <a href="dashboard.php" class="btn btn-sm btn-outline-secondary px-3" style="border-radius: 8px;">
+                            <i class="fas fa-sync-alt me-1"></i> Refresh logs
+                        </a>
+                        <a href="dashboard.php?sync=now" class="btn btn-sm btn-primary px-3" style="border-radius: 8px; background-color: var(--primary); border: none;">
+                            <i class="fas fa-cloud-upload-alt me-1"></i> Sync to GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- System Info and Git Diagnostics -->
+                    <div class="col-md-6">
+                        <h6 class="fw-bold mb-2 text-muted uppercase" style="font-size: 0.85rem; letter-spacing: 0.5px;">Git Connection Diagnostics</h6>
+                        <pre class="bg-dark text-white p-3 rounded" style="font-size: 0.8rem; max-height: 250px; overflow-y: auto; font-family: SFMono-Regular, Consolas, Monaco, monospace;"><?php echo htmlspecialchars($diagnostics); ?></pre>
+                        
+                        <div class="alert alert-info mt-3 py-2 px-3" style="border-radius: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-info-circle me-1"></i> <strong>Note:</strong> If <strong>SSH Connection Test</strong> says <code>Permission denied (publickey)</code>, it means GitHub is rejecting the SSH key. Ensure that the SSH Deploy Key (with write access) is correctly added to GitHub, and the private key is located in the Hostinger user's <code>~/.ssh/</code> folder.
+                        </div>
+                    </div>
+
+                    <!-- Git Logs and Webhook logs -->
+                    <div class="col-md-6">
+                        <h6 class="fw-bold mb-2 text-muted uppercase" style="font-size: 0.85rem; letter-spacing: 0.5px;">Git Auto-Sync Log (Pushing to GitHub)</h6>
+                        <pre class="bg-dark text-white p-3 rounded mb-4" style="font-size: 0.8rem; max-height: 150px; overflow-y: auto; font-family: SFMono-Regular, Consolas, Monaco, monospace;"><?php echo htmlspecialchars($git_sync_log); ?></pre>
+                        
+                        <h6 class="fw-bold mb-2 text-muted uppercase" style="font-size: 0.85rem; letter-spacing: 0.5px;">Deploy Webhook Log (Pulling from GitHub)</h6>
+                        <pre class="bg-dark text-white p-3 rounded" style="font-size: 0.8rem; max-height: 150px; overflow-y: auto; font-family: SFMono-Regular, Consolas, Monaco, monospace;"><?php echo htmlspecialchars($deploy_log); ?></pre>
+                    </div>
                 </div>
             </div>
         </main>
