@@ -14,7 +14,7 @@ function git_auto_sync($message = "Update blogs from Admin Panel") {
     // Commands to execute sequentially
     $commands = [
         "cd " . escapeshellarg($project_root),
-        "git add data/blogs.json uploads/blogs/* 2>&1",
+        "git add data/blogs.json uploads/blogs/ 2>&1",
         "git commit -m " . escapeshellarg($message) . " 2>&1",
         "git push origin main 2>&1"
     ];
