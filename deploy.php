@@ -36,11 +36,24 @@ if (!getenv('HOME') && preg_match('/^\/home\/([^\/]+)/', $project_root, $matches
     putenv("HOME=/home/" . $matches[1]);
 }
 
-// Commands to pull the latest changes from GitHub
-$commands = [
-    "git fetch origin 2>&1",
-    "git reset --hard origin/main 2>&1"
-];
+// Check for local changes (uncommitted modifications or untracked files)
+$status = shell_exec("git status --porcelain 2>&1");
+$has_changes = !empty(trim($status)) && (strpos($status, 'fatal:') === false);
+
+$commands = [];
+if ($has_changes) {
+    // Stash local changes including untracked uploads
+    $commands[] = "git stash -u 2>&1";
+}
+
+// Fetch and reset to GitHub main
+$commands[] = "git fetch origin 2>&1";
+$commands[] = "git reset --hard origin/main 2>&1";
+
+if ($has_changes) {
+    // Restore local changes on top of the pulled updates
+    $commands[] = "git stash pop 2>&1";
+}
 
 $output = [];
 $output[] = "=== Deploy Triggered - " . date('Y-m-d H:i:s') . " ===";
