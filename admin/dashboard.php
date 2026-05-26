@@ -267,11 +267,12 @@ if (file_exists($deploy_log_path)) {
             </div>
 
             <!-- Git Diagnostics & logs section -->
+            <?php if (isset($_GET['developer']) || isset($_GET['debug'])): ?>
             <div class="content-card mt-5">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h4 style="color: var(--navy); font-weight: 700; margin: 0;">Git & Deployment Diagnostics</h4>
                     <div class="d-flex gap-2">
-                        <a href="dashboard.php" class="btn btn-sm btn-outline-secondary px-3" style="border-radius: 8px;">
+                        <a href="dashboard.php?developer=1" class="btn btn-sm btn-outline-secondary px-3" style="border-radius: 8px;">
                             <i class="fas fa-sync-alt me-1"></i> Refresh logs
                         </a>
                         <a href="dashboard.php?sync=now" class="btn btn-sm btn-primary px-3" style="border-radius: 8px; background-color: var(--primary); border: none;">
@@ -301,6 +302,7 @@ if (file_exists($deploy_log_path)) {
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
         </main>
     </div>
 
