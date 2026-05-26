@@ -123,6 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $blogs[] = $new_blog;
             
             if (file_put_contents($json_path, json_encode($blogs, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))) {
+                require_once dirname(__DIR__) . '/config/git-sync.php';
+                git_auto_sync("Blog post added: " . $title);
                 header('Location: dashboard.php?success=' . urlencode('Blog post added successfully!'));
                 exit;
             } else {
