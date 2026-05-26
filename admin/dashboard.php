@@ -49,8 +49,16 @@ $error_msg = $_GET['error'] ?? '';
 $diagnostics = '';
 if (function_exists('shell_exec')) {
     $old_cwd = getcwd();
-    chdir(dirname(__DIR__));
+    $project_root = dirname(__DIR__);
+    chdir($project_root);
+    
+    // Ensure HOME environment variable is set for diagnostics SSH command to find deploy keys
+    if (!getenv('HOME') && preg_match('/^\/home\/([^\/]+)/', $project_root, $matches)) {
+        putenv("HOME=/home/" . $matches[1]);
+    }
+    
     $diagnostics .= "PHP User: " . (function_exists('posix_getpwuid') && function_exists('posix_geteuid') ? posix_getpwuid(posix_geteuid())['name'] : 'unknown') . "\n";
+    $diagnostics .= "HOME Dir: " . getenv('HOME') . "\n";
     $diagnostics .= "Git Remote: " . shell_exec("git remote -v 2>&1") . "\n";
     $diagnostics .= "Git Status: " . shell_exec("git status 2>&1") . "\n";
     $diagnostics .= "SSH Connection Test: " . shell_exec("ssh -T git@github.com 2>&1") . "\n";

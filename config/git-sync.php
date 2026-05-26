@@ -17,6 +17,11 @@ function git_auto_sync($message = "Update blogs from Admin Panel") {
         return false;
     }
     
+    // Ensure HOME environment variable is set for SSH to find the deploy keys
+    if (!getenv('HOME') && preg_match('/^\/home\/([^\/]+)/', $project_root, $matches)) {
+        putenv("HOME=/home/" . $matches[1]);
+    }
+    
     // Commands to execute sequentially
     $commands = [
         "git add data/blogs.json uploads/blogs/ 2>&1",

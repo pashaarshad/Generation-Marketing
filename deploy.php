@@ -31,6 +31,11 @@ if (!chdir($project_root)) {
     exit;
 }
 
+// Ensure HOME environment variable is set for SSH to find deploy keys
+if (!getenv('HOME') && preg_match('/^\/home\/([^\/]+)/', $project_root, $matches)) {
+    putenv("HOME=/home/" . $matches[1]);
+}
+
 // Commands to pull the latest changes from GitHub
 $commands = [
     "git fetch origin 2>&1",
