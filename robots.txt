@@ -1,11 +1,34 @@
 User-agent: *
 Allow: /
 
-# Exclude private directories from indexing
+# Exclude private/internal directories from indexing
 Disallow: /admin/
 Disallow: /config/
 Disallow: /includes/
 Disallow: /data/
+Disallow: /api/
+
+# Prevent indexing of utility scripts
+Disallow: /deploy.php
+Disallow: /fix_index.py
+Disallow: /update_index.py
+
+# Allow search engines to access all static assets
+Allow: /assets/
+Allow: /Services-posters/
+Allow: /uploads/
+
+# Googlebot-specific directives
+User-agent: Googlebot
+Allow: /
+
+# Bingbot-specific directives
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay for polite crawling (non-Google bots)
+User-agent: *
+Crawl-delay: 5
 
 # Specify the XML Sitemap location
 Sitemap: https://generationmarketing.in/sitemap.xml

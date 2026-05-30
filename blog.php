@@ -4,6 +4,8 @@
  */
 $page_title = "Agency Blog | Generation Marketing - Digital Tips & Insights";
 $page_desc = "Get expert insights, tips, and guidelines on SEO, Google Ads, Meta Ads, social media growth, and conversion rate optimizations from Generation Marketing.";
+$page_keywords = "digital marketing tips, latest SEO strategies, paid advertising guide, increase website traffic organically, how to run Google ads, social media algorithms growth, conversion rate optimization tips, marketing insights, niche competitor analysis, search engine optimization guides, B2B lead generation tactics";
+
 
 // Load blogs from JSON
 $json_path = __DIR__ . '/data/blogs.json';

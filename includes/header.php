@@ -10,6 +10,27 @@ if (!isset($page_title)) {
 if (!isset($page_desc)) {
     $page_desc = "Generation Marketing - Premium Digital Marketing Agency. Google Ads, SEO, Social Media, Branding & Web Development services to grow your business.";
 }
+if (!isset($page_keywords)) {
+    $page_keywords = "digital marketing agency, premium SEO services, google ads expert, meta ads agency, social media marketing, web development packages, grow business online, best marketing company India, local SEO Jaipur";
+}
+
+// Generate high-level Dynamic Canonical URL
+$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http");
+$host = $_SERVER['HTTP_HOST'];
+$uri = $_SERVER['REQUEST_URI'];
+$clean_uri = strtok($uri, '?'); // Strip sorting/search queries for clean index authority
+
+$query_parts = [];
+if (isset($_GET['id'])) {
+    $query_parts['id'] = $_GET['id'];
+} elseif (isset($_GET['slug'])) {
+    $query_parts['slug'] = $_GET['slug'];
+}
+
+$canonical_url = $protocol . "://" . $host . $clean_uri;
+if (!empty($query_parts)) {
+    $canonical_url .= "?" . http_build_query($query_parts);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +38,34 @@ if (!isset($page_desc)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     
     <!-- Title and Description Tags (SEO Keyword Optimized) -->
     <title><?php echo htmlspecialchars($page_title); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($page_desc); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($page_keywords); ?>">
     
-    <!-- Open Graph tags for Social Media -->
+    <!-- Dynamic Canonical Link (Prevents Duplicate Content Indexing) -->
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical_url); ?>">
+    
+    <!-- Speed Optimization: Preconnect to Font Servers (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph tags for Rich Social Sharing (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:site_name" content="Generation Marketing">
     <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($page_desc); ?>">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="<?php echo htmlspecialchars($canonical_url); ?>">
+    <meta property="og:image" content="<?php echo $protocol . "://" . $host; ?>/assets/logo.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($page_desc); ?>">
+    <meta name="twitter:image" content="<?php echo $protocol . "://" . $host; ?>/assets/logo.png">
     
     <!-- External Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">

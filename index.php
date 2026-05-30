@@ -28,6 +28,7 @@ $latest_blogs = array_slice($published_blogs, 0, 3);
 
 $page_title = "Generation Marketing | Grow. Scale. Succeed.";
 $page_desc = "Premium digital marketing agency helping brands scale with targeted Google Ads, results-driven SEO, creative social campaigns, and custom web development.";
+$page_keywords = "premium digital marketing agency, global digital marketing company, hire digital marketing agency, results driven digital marketing, best marketing agency India, grow business online, targeted marketing systems, eCommerce conversion marketing, digital growth partner, conversion optimization agency";
 
 include_once __DIR__ . '/includes/header.php';
 ?>

@@ -4,6 +4,7 @@
  */
 $page_title = "Pricing & Plans | Generation Marketing - Digital Marketing Packages";
 $page_desc = "View our transparent pricing options. Google Ads, Meta Ads cost, and competitive SEO packages starting from ₹8,000/month. No hidden fees.";
+$page_keywords = "affordable SEO packages, social media management cost, PPC agency pricing, digital marketing services cost, SEO plan pricing India, eCommerce setup prices, monthly marketing packages, flexible monthly plans, transparent agency billing, competitor audit report, weekly ranking updates, dedicated support packages";
 include_once __DIR__ . '/includes/header.php';
 ?>
 

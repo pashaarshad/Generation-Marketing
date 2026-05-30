@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Core Pages -->
     <url>
         <loc>https://generationmarketing.in/</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://generationmarketing.in/index.php</loc>
-        <lastmod>2026-05-30</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.90</priority>
     </url>
     <url>
         <loc>https://generationmarketing.in/about.php</loc>
@@ -22,13 +17,13 @@
         <loc>https://generationmarketing.in/services.php</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
+        <priority>0.90</priority>
     </url>
     <url>
         <loc>https://generationmarketing.in/pricing.php</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
+        <priority>0.85</priority>
     </url>
     <url>
         <loc>https://generationmarketing.in/blog.php</loc>
@@ -40,6 +35,86 @@
         <loc>https://generationmarketing.in/contact.php</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.80</priority>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- Individual Service Detail Pages (Deep Indexed) -->
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=google-ads-package</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=meta-ad-package</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=seo-starter-plan</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=growth-seo-plan</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=pro-seo-plan</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=premium-brand-system</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=growth-website-plan</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=ecommerce-website-setup</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=starter-marketplace-setup</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=ecommerce-management-plan</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=smm-basic-package</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=smm-standard-package</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://generationmarketing.in/service-details.php?id=smm-premium-package</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
     </url>
 </urlset>

@@ -4,6 +4,7 @@
  */
 $page_title = "About Us | Generation Marketing - Result-Driven Digital Agency";
 $page_desc = "Learn about Generation Marketing. We are a results-driven digital marketing agency in India helping businesses grow online with proven strategies and creative solutions.";
+$page_keywords = "digital marketing specialists, expert marketing strategists, transparent digital agency, result-driven agency India, certified Google partner agency, marketing strategy specialists, full service branding agency, competitor analysis reports, campaign performance analytics, transparent tracking systems, ROI-focused digital team, agency process roadmap";
 include_once __DIR__ . '/includes/header.php';
 ?>
 

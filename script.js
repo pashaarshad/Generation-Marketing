@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Typewriter effect ---
   const typeEl = document.getElementById('typewriter');
   if (typeEl) {
-    const words = ['Visibility', 'Leads', 'Growth', 'Revenue', 'Success'];
+    const words = ['SEO Visibility', 'Qualified Leads', 'Brand Growth', 'Ad Conversions', 'Global Success'];
     let wordIdx = 0, charIdx = 0, deleting = false;
     function type() {
       const word = words[wordIdx];

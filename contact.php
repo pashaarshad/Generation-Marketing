@@ -4,6 +4,7 @@
  */
 $page_title = "Contact Us | Generation Marketing - Free Consultation & Audit";
 $page_desc = "Have questions? Reach out to Generation Marketing. Call +91 83061 56521 or email info@generationmarketing.in. We offer a free digital audit.";
+$page_keywords = "free digital marketing audit, schedule marketing consultation, hire marketing company, marketing agency in Jaipur, best digital marketing consultation, request custom marketing proposal, get in touch with marketers, free competitor audit, business strategy consultation, whatsapp marketing help, talk to digital experts, custom package quote";
 include_once __DIR__ . '/includes/header.php';
 
 // Get pre-selected plan from URL if present

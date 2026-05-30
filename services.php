@@ -4,6 +4,7 @@
  */
 $page_title = "Our Services | Generation Marketing - Digital Packages & Solutions";
 $page_desc = "Boost your search engine visibility, paid ad ROI, and social presence. Explore Google Ads, Meta Ads, SEO Plans, Branding, Web Design, and E-Com Store Setups.";
+$page_keywords = "digital marketing packages, results-driven SEO services, professional PPC management, social media growth strategies, premium branding packages, conversion-optimized website design, eCommerce store setup services, lead generation ads, organic traffic growth, sales-focused web design, brand visual guidelines, sponsored campaign setup";
 include_once __DIR__ . '/includes/header.php';
 ?>
 

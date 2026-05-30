@@ -38,6 +38,23 @@ if (file_exists($json_path)) {
 $page_title = $blog ? htmlspecialchars($blog['title']) . " | Generation Marketing" : "Blog Not Found | Generation Marketing";
 $page_desc = $blog ? htmlspecialchars($blog['excerpt']) : "Blog post not found on Generation Marketing.";
 
+// Dynamic programmatic SEO keyword generation
+if ($blog) {
+    $title_clean = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $blog['title']));
+    $title_words = explode(' ', $title_clean);
+    $filtered_words = array_filter($title_words, function($word) {
+        return strlen($word) > 3 && !in_array($word, ['with', 'from', 'your', 'about', 'their', 'under', 'these']);
+    });
+    $extracted_keywords = array_slice($filtered_words, 0, 8);
+    $keywords_array = array_merge(
+        [strtolower($blog['category']), $blog['category'] . " strategy", "digital marketing insights", "generation marketing blog"],
+        $extracted_keywords
+    );
+    $page_keywords = implode(', ', array_unique($keywords_array));
+} else {
+    $page_keywords = "digital marketing tips, seo strategies, paid advertising, social media growth, marketing insights";
+}
+
 include_once __DIR__ . '/includes/header.php';
 ?>
 
