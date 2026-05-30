@@ -32,7 +32,7 @@ $page_desc = "Premium digital marketing agency helping brands scale with targete
 include_once __DIR__ . '/includes/header.php';
 ?>
 
-<!-- HERO SECTION -- v4>
+<!-- HERO SECTION v4 ok -->
 <section class="hero" id="home">
     <div class="hero-bg-icons">
         <i class="fas fa-arrow-trend-up icon-float" style="top: 10%; left: 5%;"></i>
@@ -47,8 +47,10 @@ include_once __DIR__ . '/includes/header.php';
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content">
                 <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
-                <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br><span id="typewriter" style="border-right: 2px solid var(--blue);">Visibility</span></h1>
-                <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium Branding solutions. Results you can measure.</p>
+                <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br><span id="typewriter"
+                        style="border-right: 2px solid var(--blue);">Visibility</span></h1>
+                <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium
+                    Branding solutions. Results you can measure.</p>
                 <div class="hero-btns">
                     <a href="services.php" class="btn-glow"><i class="fas fa-arrow-right"></i> Explore Services</a>
                     <a href="contact.php" class="btn-outline-hero"><i class="fas fa-phone"></i> Talk to Us</a>
@@ -70,7 +72,8 @@ include_once __DIR__ . '/includes/header.php';
             </div>
             <div class="col-lg-6 hero-image d-none d-lg-block text-center position-relative">
                 <div class="hero-shape-right"></div>
-                <img src="assets/hero-graph.png" alt="Digital Marketing Agency India" style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
+                <img src="assets/hero-graph.png" alt="Digital Marketing Agency India"
+                    style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
             </div>
         </div>
     </div>
@@ -310,9 +313,11 @@ include_once __DIR__ . '/includes/header.php';
                                 <span class="blog-tag mb-2 d-inline-block"
                                     style="background-color: var(--primary) !important; color: white !important; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; padding: 4px 10px; border-radius: 5px;"><?php echo htmlspecialchars($blog['category']); ?></span>
                                 <h5 class="fw-bold mb-3" style="color: var(--navy);">
-                                    <?php echo htmlspecialchars($blog['title']); ?></h5>
+                                    <?php echo htmlspecialchars($blog['title']); ?>
+                                </h5>
                                 <p class="text-muted flex-grow-1" style="font-size: 0.95rem;">
-                                    <?php echo htmlspecialchars($blog['excerpt']); ?></p>
+                                    <?php echo htmlspecialchars($blog['excerpt']); ?>
+                                </p>
                                 <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>"
                                     class="read-more mt-auto fw-bold text-decoration-none" style="color: var(--primary);">Read
                                     More <i class="fas fa-arrow-right"></i></a>
