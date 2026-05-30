@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Exclude private directories from indexing
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /data/
+
+# Specify the XML Sitemap location
+Sitemap: https://generationmarketing.in/sitemap.xml

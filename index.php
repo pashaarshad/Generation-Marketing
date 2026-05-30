@@ -1,4 +1,7 @@
 <?php
+/**
+ * Dynamic SEO Optimized Homepage - Generation Marketing
+ */
 // Load blogs from JSON
 $json_path = __DIR__ . '/data/blogs.json';
 $blogs = [];
@@ -20,1015 +23,372 @@ usort($published_blogs, function($a, $b) {
     return strtotime($b['created_at']) - strtotime($a['created_at']);
 });
 
-// Limit to latest 6 for homepage
-$latest_blogs = array_slice($published_blogs, 0, 6);
+// Limit to latest 3 blogs for homepage showcase
+$latest_blogs = array_slice($published_blogs, 0, 3);
+
+$page_title = "Generation Marketing | Grow. Scale. Succeed.";
+$page_desc = "Premium digital marketing agency helping brands scale with targeted Google Ads, results-driven SEO, creative social campaigns, and custom web development.";
+
+include_once __DIR__ . '/includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generation Marketing | Grow. Scale. Succeed.</title>
-    <meta name="description"
-        content="Generation Marketing - Premium Digital Marketing Agency. Google Ads, SEO, Social Media, Branding & Web Development services to grow your business.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-bg-icons">
+        <i class="fas fa-arrow-trend-up icon-float" style="top: 10%; left: 5%;"></i>
+        <i class="fas fa-lightbulb icon-float" style="top: 80%; left: 15%;"></i>
+        <i class="fas fa-bullseye icon-float" style="top: 15%; right: 40%;"></i>
+        <i class="fas fa-rocket icon-float" style="bottom: 10%; right: 5%;"></i>
+        <i class="fas fa-chart-pie icon-float" style="top: 50%; left: 2%;"></i>
+    </div>
+    <div class="glowing-divider"></div>
 
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#home"><img src="assets/logo.png" alt="Generation Marketing"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-2"><a class="nav-link nav-cta" href="#contact"><i
-                                class="fas fa-rocket"></i> Get Started</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <!-- Background Elements -->
-        <div class="hero-bg-icons">
-            <i class="fas fa-arrow-trend-up icon-float" style="top: 10%; left: 5%;"></i>
-            <i class="fas fa-lightbulb icon-float" style="top: 80%; left: 15%;"></i>
-            <i class="fas fa-bullseye icon-float" style="top: 15%; right: 40%;"></i>
-            <i class="fas fa-rocket icon-float" style="bottom: 10%; right: 5%;"></i>
-            <i class="fas fa-chart-pie icon-float" style="top: 50%; left: 2%;"></i>
-        </div>
-        <div class="glowing-divider"></div>
-
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
-                    <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br>Growth.</h1>
-                    <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium
-                        Branding solutions. Results you can measure.</p>
-                    <div class="hero-btns">
-                        <a href="#services" class="btn-glow"><i class="fas fa-arrow-right"></i> Explore Services</a>
-                        <a href="#contact" class="btn-outline-hero"><i class="fas fa-phone"></i> Talk to Us</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">0</span>
-                            </div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="200" data-suffix="+">0</span>
-                            </div>
-                            <div class="stat-label">Campaigns Run</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="stat-number"><span class="counter" data-target="95" data-suffix="%">0</span>
-                            </div>
-                            <div class="stat-label">Client Retention</div>
-                        </div>
-                    </div>
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <div class="hero-badge"><i class="fas fa-tag"></i> Premium Digital Marketing Agency</div>
+                <h1>More <span style="color: var(--blue);">Growth</span>.<br>More Leads. More<br><span id="typewriter" style="border-right: 2px solid var(--blue);">Visibility</span></h1>
+                <p>We help businesses grow with data-driven Google Ads, SEO, Social Media Marketing, and Premium Branding solutions. Results you can measure.</p>
+                <div class="hero-btns">
+                    <a href="services.php" class="btn-glow"><i class="fas fa-arrow-right"></i> Explore Services</a>
+                    <a href="contact.php" class="btn-outline-hero"><i class="fas fa-phone"></i> Talk to Us</a>
                 </div>
-                <div class="col-lg-6 hero-image d-none d-lg-block text-center position-relative">
-                    <div class="hero-shape-right"></div>
-                    <img src="assets/hero-graph.png" alt="Growth and Leads"
-                        style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section-padding" id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>About <span style="color:var(--primary)">Generation Marketing</span></h2>
-                <p class="subtitle">We are a result-driven digital marketing agency helping businesses grow online with
-                    proven strategies and creative solutions.</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="about-card">
-                        <div class="icon-box icon-blue"><i class="fa-solid fa-crosshairs"></i></div>
-                        <h5>Targeted Strategy</h5>
-                        <p>Data-driven campaigns tailored to your business goals for maximum ROI and growth.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="50" data-suffix="+">0</span></div>
+                        <div class="stat-label">Happy Clients</div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="about-card">
-                        <div class="icon-box icon-red"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                        <h5>Proven Results</h5>
-                        <p>Track record of delivering measurable results — higher rankings, more traffic, better
-                            conversions.</p>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="200" data-suffix="+">0</span></div>
+                        <div class="stat-label">Campaigns Run</div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="about-card">
-                        <div class="icon-box icon-yellow"><i class="fa-regular fa-lightbulb"></i></div>
-                        <h5>Creative Excellence</h5>
-                        <p>Stunning designs, compelling content, and innovative marketing that makes your brand stand
-                            out.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="about-card">
-                        <div class="icon-box icon-green"><i class="fa-solid fa-handshake-angle"></i></div>
-                        <h5>Dedicated Support</h5>
-                        <p>A dedicated team committed to your success with weekly reports and transparent communication.
-                        </p>
+                    <div class="hero-stat">
+                        <div class="stat-number"><span class="counter" data-target="95" data-suffix="%">0</span></div>
+                        <div class="stat-label">Client Retention</div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h4 class="text-center mb-4 reveal" style="color:var(--navy)">Our Simple Process</h4>
-                </div>
-                <div class="col-6 col-md reveal position-relative process-col">
-                    <div class="process-step">
-                        <div class="step-num">1</div>
-                        <h5>Discover</h5>
-                        <p>Understanding your business & goals</p>
-                    </div>
-                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
-                </div>
-                <div class="col-6 col-md reveal position-relative process-col">
-                    <div class="process-step">
-                        <div class="step-num">2</div>
-                        <h5>Plan</h5>
-                        <p>Strategize the perfect solution</p>
-                    </div>
-                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
-                </div>
-                <div class="col-6 col-md reveal position-relative process-col">
-                    <div class="process-step">
-                        <div class="step-num">3</div>
-                        <h5>Design</h5>
-                        <p>Create stunning UI/UX</p>
-                    </div>
-                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
-                </div>
-                <div class="col-6 col-md reveal position-relative process-col">
-                    <div class="process-step">
-                        <div class="step-num">4</div>
-                        <h5>Execute</h5>
-                        <p>Launch & optimize campaigns</p>
-                    </div>
-                    <i class="fas fa-chevron-right process-arrow d-none d-md-block"></i>
-                </div>
-                <div class="col-6 col-md reveal position-relative process-col">
-                    <div class="process-step">
-                        <div class="step-num">5</div>
-                        <h5>Deliver</h5>
-                        <p>Results, reports & growth</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section-padding section-light" id="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Our <span style="color:var(--primary)">Services</span></h2>
-                <p class="subtitle">Comprehensive digital marketing solutions to help your business grow, scale, and
-                    succeed online.</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="service-tabs reveal">
-                <button class="service-tab active" data-filter="all">All Services</button>
-                <button class="service-tab" data-filter="seo">SEO</button>
-                <button class="service-tab" data-filter="ads">Paid Ads</button>
-                <button class="service-tab" data-filter="smm">Social Media</button>
-                <button class="service-tab" data-filter="brand">Branding</button>
-                <button class="service-tab" data-filter="web">Web & E-Com</button>
-            </div>
-            <div class="row g-4">
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="ads">
-                    <div class="service-card position-relative"><span class="card-badge">⭐ Main Service</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/google-ads-package.jpeg"
-                                alt="Google Ads Package"></div>
-                        <div class="card-body">
-                            <h4>Google Ads Package</h4>
-                            <div class="price-tag">₹15,000 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>3-5 Campaigns (Search + Display)</li>
-                                <li><i class="fas fa-check-circle"></i>Advanced Keyword Research</li>
-                                <li><i class="fas fa-check-circle"></i>Conversion Tracking & Remarketing</li>
-                            </ul>
-                            <a href="service-details.php?id=google-ads-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="ads">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/meta-ad-package.jpeg"
-                                alt="Meta Ad Package"></div>
-                        <div class="card-body">
-                            <h4>Meta Ad Package</h4>
-                            <div class="price-tag">₹15,000 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>4-6 Campaigns (Lead/Sales)</li>
-                                <li><i class="fas fa-check-circle"></i>10 Creatives (Post + Reels)</li>
-                                <li><i class="fas fa-check-circle"></i>A/B Testing & Retargeting</li>
-                            </ul>
-                            <a href="service-details.php?id=meta-ad-package" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="seo">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/seo-starter-plan.jpeg"
-                                alt="SEO Starter Plan"></div>
-                        <div class="card-body">
-                            <h4>SEO Starter Plan</h4>
-                            <div class="price-tag">₹8,000 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>Website SEO Audit</li>
-                                <li><i class="fas fa-check-circle"></i>10-15 Keywords Research</li>
-                                <li><i class="fas fa-check-circle"></i>On-Page SEO & GMB Optimization</li>
-                            </ul>
-                            <a href="service-details.php?id=seo-starter-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="seo">
-                    <div class="service-card position-relative"><span class="card-badge"
-                            style="background:var(--green)">★ Recommended</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/growth-seo-plan.jpeg"
-                                alt="Growth SEO Plan"></div>
-                        <div class="card-body">
-                            <h4>Growth SEO Plan</h4>
-                            <div class="price-tag">₹15,000 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>20-30 Keywords + Technical SEO</li>
-                                <li><i class="fas fa-check-circle"></i>10-15 Quality Backlinks</li>
-                                <li><i class="fas fa-check-circle"></i>Weekly Report + Strategy</li>
-                            </ul>
-                            <a href="service-details.php?id=growth-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="seo">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/pro-seo-plan.jpeg" alt="Pro SEO Plan">
-                        </div>
-                        <div class="card-body">
-                            <h4>Pro SEO Plan</h4>
-                            <div class="price-tag">₹25,000 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>40-60 Keywords + Complete SEO</li>
-                                <li><i class="fas fa-check-circle"></i>20-30 High Quality Backlinks</li>
-                                <li><i class="fas fa-check-circle"></i>Dedicated Support & Weekly Optimization</li>
-                            </ul>
-                            <a href="service-details.php?id=pro-seo-plan" class="btn-service"><i class="fas fa-eye"></i> See all the details, click here</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="brand">
-                    <div class="service-card position-relative"><span class="card-badge"
-                            style="background:var(--gold)">Premium</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/premium-brand-system.jpeg"
-                                alt="Premium Brand System"></div>
-                        <div class="card-body">
-                            <h4>Premium Brand System</h4>
-                            <div class="price-tag">₹35,000 <span class="period">one-time</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>Logo + Brand Strategy + Guidelines</li>
-                                <li><i class="fas fa-check-circle"></i>Social Media Kit & Ad Creatives</li>
-                                <li><i class="fas fa-check-circle"></i>Business Stationery & Packaging</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/premium-brand-system.jpeg"
-                                data-title="Premium Brand System"><i class="fas fa-eye"></i> View Full Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="web">
-                    <div class="service-card position-relative"><span class="card-badge"
-                            style="background:var(--green)">★ Recommended</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/growth-website-plan.jpeg"
-                                alt="Growth Website Plan"></div>
-                        <div class="card-body">
-                            <h4>Growth Website Plan</h4>
-                            <div class="price-tag">₹15,000 <span class="period">one-time</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>5-8 Pages + Premium UI/UX</li>
-                                <li><i class="fas fa-check-circle"></i>SEO + Blog + Analytics Setup</li>
-                                <li><i class="fas fa-check-circle"></i>WhatsApp & Call Integration</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/growth-website-plan.jpeg"
-                                data-title="Growth Website Plan"><i class="fas fa-eye"></i> View Full Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="web">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/ecommerce-website-setup.jpeg"
-                                alt="E-Commerce Website Setup"></div>
-                        <div class="card-body">
-                            <h4>E-Commerce Store Setup</h4>
-                            <div class="price-tag">₹30,000 <span class="period">one-time</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>Shopify/WooCommerce Store</li>
-                                <li><i class="fas fa-check-circle"></i>Branding + 10 Ad Setup</li>
-                                <li><i class="fas fa-check-circle"></i>SEO Setup + Post-Launch Support</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/ecommerce-website-setup.jpeg"
-                                data-title="E-Commerce Website Setup"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="web">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/starter-marketplace-setup.jpeg"
-                                alt="Marketplace Setup"></div>
-                        <div class="card-body">
-                            <h4>Starter Marketplace Setup</h4>
-                            <div class="price-tag">₹8,000 <span class="period">one-time</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>Amazon, Flipkart, Meesho</li>
-                                <li><i class="fas fa-check-circle"></i>5-30 Product Listings + SEO</li>
-                                <li><i class="fas fa-check-circle"></i>Ad Setup & Growth Training</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/starter-marketplace-setup.jpeg"
-                                data-title="Starter Marketplace Setup"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="web">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/ecommerce-management-plan.jpeg"
-                                alt="E-Commerce Management"></div>
-                        <div class="card-body">
-                            <h4>E-Commerce Management</h4>
-                            <div class="price-tag">₹5,000 <span class="period">/month per platform</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>Listing & SEO Optimization</li>
-                                <li><i class="fas fa-check-circle"></i>Ad Setup & Management</li>
-                                <li><i class="fas fa-check-circle"></i>Growth Strategies & Tracking</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/ecommerce-management-plan.jpeg"
-                                data-title="E-Commerce Management Plan"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="smm">
-                    <div class="service-card position-relative">
-                        <div class="card-img-wrapper"><img src="Services-posters/smm-basic-package.jpeg"
-                                alt="SMM Basic"></div>
-                        <div class="card-body">
-                            <h4>Social Media — Basic</h4>
-                            <div class="price-tag">₹7,999 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>12 Posts (Graphics + Reels)</li>
-                                <li><i class="fas fa-check-circle"></i>Caption Writing & Hashtags</li>
-                                <li><i class="fas fa-check-circle"></i>1 Platform (Instagram/Facebook)</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/smm-basic-package.jpeg"
-                                data-title="Social Media Basic Package"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="smm">
-                    <div class="service-card position-relative"><span class="card-badge"
-                            style="background:var(--primary)">🔥 Popular</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/smm-standard-package.jpeg"
-                                alt="SMM Standard"></div>
-                        <div class="card-body">
-                            <h4>Social Media — Standard</h4>
-                            <div class="price-tag">₹9,999 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>20 Posts + Professional Design</li>
-                                <li><i class="fas fa-check-circle"></i>Growth Strategy & Content Plan</li>
-                                <li><i class="fas fa-check-circle"></i>2 Platforms (Instagram + Facebook)</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/smm-standard-package.jpeg"
-                                data-title="Social Media Standard Package"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 service-item" data-category="smm">
-                    <div class="service-card position-relative"><span class="card-badge"
-                            style="background:var(--red)">👑 Premium</span>
-                        <div class="card-img-wrapper"><img src="Services-posters/smm-premium-package.jpeg"
-                                alt="SMM Premium"></div>
-                        <div class="card-body">
-                            <h4>Social Media — Premium</h4>
-                            <div class="price-tag">₹14,999 <span class="period">/month</span></div>
-                            <ul class="features-mini">
-                                <li><i class="fas fa-check-circle"></i>30 Posts + Full Account Handling</li>
-                                <li><i class="fas fa-check-circle"></i>Daily Posting + Branding Strategy</li>
-                                <li><i class="fas fa-check-circle"></i>2 Platforms + High Quality Design</li>
-                            </ul>
-                            <button class="btn-service" data-bs-toggle="modal" data-bs-target="#posterModal"
-                                data-poster="Services-posters/smm-premium-package.jpeg"
-                                data-title="Social Media Premium Package"><i class="fas fa-eye"></i> View Full
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="section-padding" id="pricing">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Pricing & <span style="color:var(--primary)">Packages</span></h2>
-                <p class="subtitle">Transparent pricing with no hidden charges. Choose the plan that fits your business
-                    needs.</p>
-                <div class="accent-line"></div>
-            </div>
-
-            <h4 class="text-center mb-4 reveal" style="color:var(--navy)"><i class="fas fa-search"></i> SEO Plans</h4>
-            <div class="row g-4 mb-5">
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-seedling"></i></div>
-                        <h4>SEO Starter</h4>
-                        <p class="plan-desc">Perfect for Local Business & Beginners</p>
-                        <div class="price"><span class="currency">₹</span>8,000</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>Website SEO Audit</li>
-                            <li><i class="fas fa-check"></i>10-15 Keywords Research</li>
-                            <li><i class="fas fa-check"></i>On-Page SEO Optimization</li>
-                            <li><i class="fas fa-check"></i>Google My Business Setup</li>
-                            <li><i class="fas fa-check"></i>5 Basic Backlinks</li>
-                            <li><i class="fas fa-check"></i>Monthly Report</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card featured">
-                        <div class="popular-badge">★ Most Recommended</div>
-                        <div class="plan-icon"><i class="fas fa-chart-line"></i></div>
-                        <h4>Growth SEO</h4>
-                        <p class="plan-desc">For Growing Businesses & Service Providers</p>
-                        <div class="price"><span class="currency">₹</span>15,000</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>20-30 Advanced Keywords</li>
-                            <li><i class="fas fa-check"></i>Full On-Page Optimization</li>
-                            <li><i class="fas fa-check"></i>Technical SEO</li>
-                            <li><i class="fas fa-check"></i>10-15 Quality Backlinks</li>
-                            <li><i class="fas fa-check"></i>Content & Competitor Analysis</li>
-                            <li><i class="fas fa-check"></i>Google My Business SEO</li>
-                            <li><i class="fas fa-check"></i>Weekly Report + Strategy</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-crown"></i></div>
-                        <h4>Pro SEO</h4>
-                        <p class="plan-desc">For Big Businesses & E-Commerce Brands</p>
-                        <div class="price"><span class="currency">₹</span>25,000</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>40-60 Keywords Target</li>
-                            <li><i class="fas fa-check"></i>Complete Website SEO</li>
-                            <li><i class="fas fa-check"></i>Advanced Technical SEO</li>
-                            <li><i class="fas fa-check"></i>20-30 High Quality Backlinks</li>
-                            <li><i class="fas fa-check"></i>Blog Content & Link Building</li>
-                            <li><i class="fas fa-check"></i>Dedicated Support</li>
-                            <li><i class="fas fa-check"></i>Weekly Optimization</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="text-center mb-4 reveal" style="color:var(--navy)"><i class="fas fa-share-alt"></i> Social Media
-                Management</h4>
-            <div class="row g-4 mb-5">
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-thumbs-up"></i></div>
-                        <h4>Basic</h4>
-                        <p class="plan-desc">1 Platform (Instagram/Facebook)</p>
-                        <div class="price"><span class="currency">₹</span>7,999</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>12 Posts (Graphics + Reels)</li>
-                            <li><i class="fas fa-check"></i>Post Design & Caption Writing</li>
-                            <li><i class="fas fa-check"></i>Hashtags & Post Scheduling</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card featured">
-                        <div class="popular-badge">🔥 Most Popular</div>
-                        <div class="plan-icon"><i class="fas fa-fire"></i></div>
-                        <h4>Standard</h4>
-                        <p class="plan-desc">2 Platforms (Instagram + Facebook)</p>
-                        <div class="price"><span class="currency">₹</span>9,999</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>20 Posts (Graphics + Reels)</li>
-                            <li><i class="fas fa-check"></i>Professional Design</li>
-                            <li><i class="fas fa-check"></i>Caption + Hashtags</li>
-                            <li><i class="fas fa-check"></i>Basic Growth Strategy</li>
-                            <li><i class="fas fa-check"></i>Monthly Content Plan</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-gem"></i></div>
-                        <h4>Premium</h4>
-                        <p class="plan-desc">2 Platforms — Full Account Handling</p>
-                        <div class="price"><span class="currency">₹</span>14,999</div>
-                        <div class="billing">/month</div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i>30 Posts (Image + Reels + Stories)</li>
-                            <li><i class="fas fa-check"></i>Full Account Handling</li>
-                            <li><i class="fas fa-check"></i>Branding + Strategy</li>
-                            <li><i class="fas fa-check"></i>Daily Posting & High Quality Design</li>
-                        </ul>
-                        <button class="btn-pricing" onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-            </div>
-
-            <h4 class="text-center mb-4 reveal" style="color:var(--navy)"><i class="fas fa-ad"></i> Ads & One-Time
-                Packages</h4>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fab fa-google"></i></div>
-                        <h4>Google Ads</h4>
-                        <div class="price"><span class="currency">₹</span>15,000</div>
-                        <div class="billing">/month</div><button class="btn-pricing"
-                            onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fab fa-meta"></i></div>
-                        <h4>Meta Ads</h4>
-                        <div class="price"><span class="currency">₹</span>15,000</div>
-                        <div class="billing">/month</div><button class="btn-pricing"
-                            onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-palette"></i></div>
-                        <h4>Brand System</h4>
-                        <div class="price"><span class="currency">₹</span>35,000</div>
-                        <div class="billing">one-time</div><button class="btn-pricing"
-                            onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 reveal">
-                    <div class="pricing-card">
-                        <div class="plan-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h4>Website Plan</h4>
-                        <div class="price"><span class="currency">₹</span>15,000</div>
-                        <div class="billing">one-time</div><button class="btn-pricing"
-                            onclick="location.href='#contact'">Get Started</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BLOG -->
-    <section class="section-padding section-light" id="blog">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Latest from Our <span style="color:var(--primary)">Blog</span></h2>
-                <p class="subtitle">Tips, insights, and strategies to help you stay ahead in the digital marketing game.
-                </p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="row g-4">
-                <?php if (empty($latest_blogs)): ?>
-                    <div class="col-12 text-center reveal">
-                        <p class="lead" style="color: var(--gray);">No blog posts found. Check back later!</p>
-                    </div>
-                <?php else: ?>
-                    <?php foreach ($latest_blogs as $blog): ?>
-                        <?php 
-                        $image_src = htmlspecialchars($blog['image']);
-                        if (!empty($blog['image']) && !preg_match('/^https?:\/\//', $blog['image'])) {
-                            $image_src = 'uploads/blogs/' . htmlspecialchars($blog['image']);
-                        }
-                        ?>
-                        <div class="col-md-6 col-lg-4 reveal">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="<?php echo $image_src; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>"></div>
-                                <div class="blog-body"><span class="blog-tag"><?php echo htmlspecialchars($blog['category']); ?></span>
-                                    <h5><?php echo htmlspecialchars($blog['title']); ?></h5>
-                                    <p><?php echo htmlspecialchars($blog['excerpt']); ?></p>
-                                    <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLIENTS -->
-    <section class="section-padding" id="clients">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Our <span style="color:var(--primary)">Clients</span></h2>
-                <p class="subtitle">Trusted by 50+ businesses across India. Here's what our clients say about us.</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>TechNova</span></div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>FreshMart</span></div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>StyleHub</span></div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>BuildCraft</span></div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>EduPrime</span></div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 reveal">
-                    <div class="client-logo"><span>GreenLeaf</span></div>
-                </div>
-            </div>
-            <div id="testimonialCarousel" class="carousel slide reveal" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card">
-                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i></div>
-                                    <p>"Generation Marketing transformed our online presence completely. Our Google Ads
-                                        campaigns are delivering 3x ROI and our leads have increased by 200%. Highly
-                                        recommended!"</p>
-                                    <div class="client-info">
-                                        <div class="client-avatar">R</div>
-                                        <div>
-                                            <div class="client-name">Rajesh Kumar</div>
-                                            <div class="client-role">CEO, TechNova Solutions</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card">
-                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i></div>
-                                    <p>"The SEO Growth Plan has been a game-changer for our business. We went from page
-                                        5 to page 1 on Google within 3 months. Their team is professional and
-                                        results-driven."</p>
-                                    <div class="client-info">
-                                        <div class="client-avatar">P</div>
-                                        <div>
-                                            <div class="client-name">Priya Sharma</div>
-                                            <div class="client-role">Founder, StyleHub Fashion</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card">
-                                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i></div>
-                                    <p>"Their social media management has helped us build a strong online community. Our
-                                        Instagram engagement increased by 400% and we're getting regular leads from
-                                        social media now."</p>
-                                    <div class="client-info">
-                                        <div class="client-avatar">A</div>
-                                        <div>
-                                            <div class="client-name">Amit Patel</div>
-                                            <div class="client-role">Owner, FreshMart Organic</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="prev"><span
-                        class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span></button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
-                    data-bs-slide="next"><span
-                        class="carousel-control-next-icon bg-dark rounded-circle p-3"></span></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section-padding section-light" id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Get in <span style="color:var(--primary)">Touch</span></h2>
-                <p class="subtitle">Ready to grow your business? Let's discuss how we can help you achieve your goals.
-                </p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-7 reveal">
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6"><label class="form-label">Full Name</label><input type="text"
-                                        class="form-control" placeholder="Your Name" required></div>
-                                <div class="col-md-6"><label class="form-label">Email</label><input type="email"
-                                        class="form-control" placeholder="your@email.com" required></div>
-                                <div class="col-md-6"><label class="form-label">Phone</label><input type="tel"
-                                        class="form-control" placeholder="+91 XXXXX XXXXX" required></div>
-                                <div class="col-md-6"><label class="form-label">Service Interested In</label>
-                                    <select class="form-select" required>
-                                        <option value="" selected disabled>Select a Service</option>
-                                        <option>Google Ads Package</option>
-                                        <option>Meta Ad Package</option>
-                                        <option>SEO Starter Plan</option>
-                                        <option>Growth SEO Plan</option>
-                                        <option>Pro SEO Plan</option>
-                                        <option>Premium Brand System</option>
-                                        <option>Growth Website Plan</option>
-                                        <option>E-Commerce Store Setup</option>
-                                        <option>Marketplace Setup</option>
-                                        <option>Social Media Management</option>
-                                        <option>E-Commerce Management</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12"><label class="form-label">Message</label><textarea
-                                        class="form-control" rows="4" placeholder="Tell us about your project..."
-                                        required></textarea></div>
-                                <div class="col-12"><button type="submit" class="btn-glow w-100"
-                                        style="border:none;padding:16px"><i class="fas fa-paper-plane"></i> Send
-                                        Message</button></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-5 reveal">
-                    <div class="contact-info-card">
-                        <h3>Contact Info</h3>
-                        <div class="contact-info-item">
-                            <div class="icon-circle"><i class="fas fa-phone"></i></div>
-                            <div>
-                                <h6>Phone</h6>
-                                <p>+91 83061 56521</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon-circle"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h6>Email</h6>
-                                <p>info@generationmarketing.in</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h6>Office</h6>
-                                <p>India</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item">
-                            <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
-                            <div>
-                                <h6>WhatsApp</h6>
-                                <p>+91 83061 56521</p>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TERMS -->
-    <section class="section-padding" id="terms">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Terms & <span style="color:var(--primary)">Conditions</span></h2>
-                <p class="subtitle">Please read our terms of service and privacy policy carefully.</p>
-                <div class="accent-line"></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-9 reveal">
-                    <div class="accordion terms-accordion" id="termsAccordion">
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse"
-                                    data-bs-target="#t1">1. Service Agreement</button></h2>
-                            <div id="t1" class="accordion-collapse collapse show" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">By engaging Generation Marketing for any service, you agree
-                                    to the terms outlined herein. Our services include but are not limited to SEO,
-                                    Google Ads, Meta Ads, Social Media Management, Branding, and Website Development.
-                                    All service deliverables, timelines, and pricing will be clearly communicated before
-                                    project commencement.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#t2">2. Payment Terms</button></h2>
-                            <div id="t2" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">All recurring services (SEO, Ads, Social Media) are billed
-                                    monthly in advance. One-time services (Branding, Website) require 50% advance
-                                    payment before work begins and 50% upon completion. Payments are non-refundable once
-                                    work has commenced. All prices are in Indian Rupees (₹) and are exclusive of
-                                    applicable taxes.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#t3">3. Refund Policy</button></h2>
-                            <div id="t3" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">Refunds are available within 7 days of payment if no work
-                                    has been initiated. Once the project is underway, refunds will be prorated based on
-                                    work completed. Ad spend budgets paid to third-party platforms (Google, Meta) are
-                                    non-refundable.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#t4">4. Intellectual Property</button>
-                            </h2>
-                            <div id="t4" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">All deliverables created by Generation Marketing become the
-                                    property of the client upon full payment. This includes logos, designs, website
-                                    code, and content. We reserve the right to showcase completed projects in our
-                                    portfolio unless otherwise agreed upon in writing.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#t5">5. Privacy Policy</button></h2>
-                            <div id="t5" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">We collect personal information (name, email, phone) solely
-                                    for service delivery and communication purposes. Your data is never sold to third
-                                    parties. We use industry-standard security measures to protect your information. By
-                                    using our services, you consent to our data collection and usage practices as
-                                    described in this policy.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed"
-                                    data-bs-toggle="collapse" data-bs-target="#t6">6. Limitation of Liability</button>
-                            </h2>
-                            <div id="t6" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
-                                <div class="accordion-body">Generation Marketing shall not be liable for any indirect,
-                                    incidental, or consequential damages arising from the use of our services. While we
-                                    strive for the best results, we cannot guarantee specific rankings, traffic numbers,
-                                    or conversion rates as these depend on multiple external factors beyond our control.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5><i class="fas fa-chart-line"></i> Generation <span style="color:var(--yellow)">Marketing</span>
-                    </h5>
-                    <p style="color:rgba(255,255,255,0.6)">Your trusted digital marketing partner. We help businesses
-                        grow with data-driven strategies, creative excellence, and measurable results.</p>
-                    <p style="color:var(--yellow);font-weight:600">GROW. SCALE. SUCCEED.</p>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <h5>Services</h5>
-                    <ul class="footer-links">
-                        <li><a href="#services">Google Ads</a></li>
-                        <li><a href="#services">SEO Plans</a></li>
-                        <li><a href="#services">Social Media</a></li>
-                        <li><a href="#services">Branding</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">E-Commerce</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5>Contact Us</h5>
-                    <ul class="footer-links">
-                        <li><a href="tel:+918306156521"><i class="fas fa-phone me-2"></i>+91 83061 56521</a></li>
-                        <li><a href="mailto:info@generationmarketing.in"><i
-                                    class="fas fa-envelope me-2"></i>info@generationmarketing.in</a></li>
-                        <li><a href="https://wa.me/918306156521"><i class="fab fa-whatsapp me-2"></i>WhatsApp Us</a>
-                        </li>
-                    </ul>
-                    <div class="social-links mt-3">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Generation Marketing. All Rights Reserved. | <a href="#terms"
-                        style="color:var(--yellow)">Terms & Conditions</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- POSTER MODAL -->
-    <div class="modal fade poster-modal" id="posterModal" tabindex="-1">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title"></h5>
-                </div>
-                <div class="modal-body"><img src="" alt="Service Details"></div>
+            <div class="col-lg-6 hero-image d-none d-lg-block text-center position-relative">
+                <div class="hero-shape-right"></div>
+                <img src="assets/hero-graph.png" alt="Digital Marketing Agency India" style="max-height:520px; border-radius:20px; position:relative; z-index:2; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
             </div>
         </div>
     </div>
+</section>
 
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/918306156521" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
-    <button class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<!-- ABOUT BRIEF TEASER -->
+<section class="section-padding" id="about">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>About <span style="color:var(--primary)">Generation Marketing</span></h2>
+            <p class="subtitle">We are a result-driven digital marketing agency helping businesses grow online with proven strategies and creative solutions.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <div class="row g-4 mb-4">
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
+                    <div class="icon-box icon-blue mx-auto mb-3"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h5 class="fw-bold mb-2">Targeted Strategy</h5>
+                    <p class="text-muted" style="font-size: 0.9rem;">Data-driven campaigns tailored to your business goals for maximum ROI and growth.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
+                    <div class="icon-box icon-red mx-auto mb-3"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h5 class="fw-bold mb-2">Proven Results</h5>
+                    <p class="text-muted" style="font-size: 0.9rem;">Track record of delivering measurable results — higher rankings, more traffic, better conversions.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
+                    <div class="icon-box icon-yellow mx-auto mb-3"><i class="fa-regular fa-lightbulb"></i></div>
+                    <h5 class="fw-bold mb-2">Creative Excellence</h5>
+                    <p class="text-muted" style="font-size: 0.9rem;">Stunning designs, compelling content, and innovative marketing that makes your brand stand out.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
+                    <div class="icon-box icon-green mx-auto mb-3"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h5 class="fw-bold mb-2">Dedicated Support</h5>
+                    <p class="text-muted" style="font-size: 0.9rem;">A dedicated team committed to your success with weekly reports and transparent communication.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5 reveal">
+            <a href="about.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">
+                Learn More About Us <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
+<!-- SERVICES SHOWCASE TEASER -->
+<section class="section-padding section-light" id="services">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>Our Core <span style="color:var(--primary)">Services</span></h2>
+            <p class="subtitle">Comprehensive digital marketing solutions engineered to help your business grow, scale, and succeed online.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Google Ads Card -->
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
+                    <span class="card-badge">⭐ Main Service</span>
+                    <div class="card-img-wrapper"><img src="Services-posters/google-ads-package.jpeg" alt="Google Ads Agency India" class="w-100"></div>
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold" style="color: var(--navy);">Google Ads Package</h4>
+                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
+                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>3-5 Campaigns (Search + Display)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Conversion Tracking & Remarketing</li>
+                        </ul>
+                        <a href="service-details.php?id=google-ads-package" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
+                    </div>
+                </div>
+            </div>
 
-</html>
+            <!-- Meta Ads Card -->
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
+                    <div class="card-img-wrapper"><img src="Services-posters/meta-ad-package.jpeg" alt="Meta Ads Agency India" class="w-100"></div>
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold" style="color: var(--navy);">Meta Ad Package</h4>
+                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
+                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>4-6 Lead / Sales Campaigns</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>A/B Testing & Retargeting</li>
+                        </ul>
+                        <a href="service-details.php?id=meta-ad-package" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO Growth Card -->
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
+                    <span class="card-badge" style="background:var(--green)">★ Recommended</span>
+                    <div class="card-img-wrapper"><img src="Services-posters/growth-seo-plan.jpeg" alt="SEO Growth Services India" class="w-100"></div>
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold" style="color: var(--navy);">Growth SEO Plan</h4>
+                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
+                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>20-30 Target Keywords + On-Page</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>10-15 Quality Backlinks/month</li>
+                        </ul>
+                        <a href="service-details.php?id=growth-seo-plan" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 reveal">
+            <a href="services.php" class="btn btn-primary rounded-pill px-5 py-3 fw-bold" style="background-color: var(--primary); border: none;">
+                View All Services & Packages <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section class="section-padding bg-white" id="pricing-teaser">
+    <div class="container text-center reveal">
+        <div class="section-header text-center reveal">
+            <h2>Pricing & <span style="color:var(--primary)">Packages</span></h2>
+            <p class="subtitle">Transparent pricing with no hidden charges. Choose the plan that fits your business needs.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <p class="lead text-muted max-w-2xl mx-auto mb-4" style="font-size: 1.1rem;">No hidden setup fees. No lock-in contracts. Pay only for results.</p>
+        <div class="row justify-content-center g-4 mb-5">
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
+                    <h5 class="fw-bold" style="color: var(--navy);">SEO Plans</h5>
+                    <p class="text-muted mb-2">Starting from</p>
+                    <h3 class="fw-extrabold text-primary mb-3">₹8,000<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
+                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View SEO Packages</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
+                    <h5 class="fw-bold" style="color: var(--navy);">Social Media</h5>
+                    <p class="text-muted mb-2">Starting from</p>
+                    <h3 class="fw-extrabold text-primary mb-3">₹7,999<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
+                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View SMM Packages</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
+                    <h5 class="fw-bold" style="color: var(--navy);">Paid Ads</h5>
+                    <p class="text-muted mb-2">Starting from</p>
+                    <h3 class="fw-extrabold text-primary mb-3">₹15,000<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
+                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View Campaign Packages</a>
+                </div>
+            </div>
+        </div>
+        <a href="pricing.php" class="btn btn-primary rounded-pill px-5 py-3 fw-bold" style="background-color: var(--primary); border: none;">
+            Compare All Packages <i class="fas fa-chevron-right ms-2"></i>
+        </a>
+    </div>
+</section>
+
+<!-- LATEST BLOG SHOWCASE -->
+<section class="section-padding section-light" id="blog">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>Latest from Our <span style="color:var(--primary)">Blog</span></h2>
+            <p class="subtitle">Tips, insights, and strategies to help you stay ahead in the digital marketing game.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <div class="row g-4">
+            <?php if (empty($latest_blogs)): ?>
+                <div class="col-12 text-center reveal">
+                    <p class="lead" style="color: var(--gray);">No blog posts found. Check back later!</p>
+                </div>
+            <?php else: ?>
+                <?php foreach ($latest_blogs as $blog): ?>
+                    <?php 
+                    $image_src = htmlspecialchars($blog['image']);
+                    if (!empty($blog['image']) && !preg_match('/^https?:\/\//', $blog['image'])) {
+                        $image_src = 'uploads/blogs/' . htmlspecialchars($blog['image']);
+                    }
+                    ?>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="blog-card bg-white rounded-4 border shadow-sm overflow-hidden h-100 d-flex flex-column transition-all hover-translate-y">
+                            <div class="blog-img" style="height: 220px; overflow: hidden;"><img src="<?php echo $image_src; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="w-100 h-100 object-fit-cover"></div>
+                            <div class="blog-body p-4 d-flex flex-column flex-grow-1">
+                                <span class="blog-tag mb-2 d-inline-block"><?php echo htmlspecialchars($blog['category']); ?></span>
+                                <h5 class="fw-bold mb-3" style="color: var(--navy);"><?php echo htmlspecialchars($blog['title']); ?></h5>
+                                <p class="text-muted flex-grow-1" style="font-size: 0.95rem;"><?php echo htmlspecialchars($blog['excerpt']); ?></p>
+                                <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>" class="read-more mt-auto fw-bold text-decoration-none" style="color: var(--primary);">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <div class="text-center mt-5 reveal">
+            <a href="blog.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">
+                Read All Articles <i class="fas fa-newspaper ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENTS & TRUST SECTION -->
+<section class="section-padding bg-white" id="clients">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>Our <span style="color:var(--primary)">Clients</span></h2>
+            <p class="subtitle">Trusted by 50+ businesses across India. Here's what our clients say about us.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <div class="row g-4 mb-5 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>TechNova</span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>FreshMart</span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>StyleHub</span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>BuildCraft</span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>EduPrime</span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 reveal">
+                <div class="client-logo"><span>GreenLeaf</span></div>
+            </div>
+        </div>
+        
+        <!-- Testimonials Carousel -->
+        <div id="testimonialCarousel" class="carousel slide reveal" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <div class="testimonial-card p-4 bg-light rounded-4 shadow-sm border border-light">
+                                <div class="stars mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="lead mb-4" style="color: var(--navy); font-style: italic; font-size: 1.15rem;">"Generation Marketing transformed our online presence completely. Our Google Ads campaigns are delivering 3x ROI and our leads have increased by 200%. Highly recommended!"</p>
+                                <div class="client-info d-flex justify-content-center align-items-center gap-3">
+                                    <div class="client-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 45px; height: 45px;">R</div>
+                                    <div class="text-start">
+                                        <div class="client-name fw-bold" style="color: var(--navy);">Rajesh Kumar</div>
+                                        <div class="client-role text-muted" style="font-size: 0.85rem;">CEO, TechNova Solutions</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <div class="testimonial-card p-4 bg-light rounded-4 shadow-sm border border-light">
+                                <div class="stars mb-3 text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="lead mb-4" style="color: var(--navy); font-style: italic; font-size: 1.15rem;">"The SEO Growth Plan has been a game-changer for our business. We went from page 5 to page 1 on Google within 3 months. Their team is professional and results-driven."</p>
+                                <div class="client-info d-flex justify-content-center align-items-center gap-3">
+                                    <div class="client-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 45px; height: 45px;">P</div>
+                                    <div class="text-start">
+                                        <div class="client-name fw-bold" style="color: var(--navy);">Priya Sharma</div>
+                                        <div class="client-role text-muted" style="font-size: 0.85rem;">Founder, StyleHub Fashion</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon bg-dark rounded-circle p-2"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next"><span class="carousel-control-next-icon bg-dark rounded-circle p-2"></span></button>
+        </div>
+    </div>
+</section>
+
+<!-- GENERAL TERMS AGREEMENT ACCORDION -->
+<section class="section-padding bg-light" id="terms">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>Terms & <span style="color:var(--primary)">Conditions</span></h2>
+            <p class="subtitle">Please read our terms of service and privacy policy carefully.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9 reveal">
+                <div class="accordion terms-accordion" id="termsAccordion">
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
+                        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#t1">1. Service Agreement</button></h2>
+                        <div id="t1" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
+                            <div class="accordion-body">By engaging Generation Marketing for any service, you agree to the terms outlined herein. Our services include but are not limited to SEO, Google Ads, Meta Ads, Social Media Management, Branding, and Website Development. All service deliverables, timelines, and pricing will be clearly communicated before project commencement.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
+                        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#t2">2. Payment Terms</button></h2>
+                        <div id="t2" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
+                            <div class="accordion-body">All recurring services (SEO, Ads, Social Media) are billed monthly in advance. One-time services (Branding, Website) require 50% advance payment before work begins and 50% upon completion. Payments are non-refundable once work has commenced. All prices are in Indian Rupees (₹) and are exclusive of applicable taxes.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
+                        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#t3">3. Refund Policy</button></h2>
+                        <div id="t3" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
+                            <div class="accordion-body">Refunds are available within 7 days of payment if no work has been initiated. Once the project is underway, refunds will be prorated based on work completed. Ad spend budgets paid to third-party platforms (Google, Meta) are non-refundable.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-3 border-0 shadow-sm rounded-3">
+                        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#t4">4. Intellectual Property</button></h2>
+                        <div id="t4" class="accordion-collapse collapse" data-bs-parent="#termsAccordion">
+                            <div class="accordion-body">All deliverables created by Generation Marketing become the property of the client upon full payment. This includes logos, designs, website code, and content. We reserve the right to showcase completed projects in our portfolio unless otherwise agreed upon in writing.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+include_once __DIR__ . '/includes/footer.php';
+?>
