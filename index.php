@@ -76,201 +76,86 @@ include_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- ABOUT BRIEF TEASER -->
-<section class="section-padding" id="about">
+<!-- AGENCY INTRO (VALUE PITCH) -->
+<section class="section-padding bg-white" id="agency-intro">
     <div class="container">
-        <div class="section-header text-center reveal">
-            <h2>About <span style="color:var(--primary)">Generation Marketing</span></h2>
-            <p class="subtitle">We are a result-driven digital marketing agency helping businesses grow online with proven strategies and creative solutions.</p>
-            <div class="accent-line mx-auto"></div>
-        </div>
-        <div class="row g-4 mb-4">
-            <div class="col-md-6 col-lg-3 reveal">
-                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
-                    <div class="icon-box icon-blue mx-auto mb-3"><i class="fa-solid fa-crosshairs"></i></div>
-                    <h5 class="fw-bold mb-2">Targeted Strategy</h5>
-                    <p class="text-muted" style="font-size: 0.9rem;">Data-driven campaigns tailored to your business goals for maximum ROI and growth.</p>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 reveal">
+                <span class="hero-badge mb-2"><i class="fas fa-rocket text-primary"></i> TARGETED MARKETING</span>
+                <h2 style="color: var(--navy); font-weight: 800; line-height: 1.3;">We Build High-Performance Digital Funnels That <span style="color: var(--primary);">Convert</span></h2>
+                <p class="lead text-muted mt-3" style="line-height: 1.8;">Generation Marketing is a results-driven agency. We align search engine positioning, paid traffic acquisition, and premium conversion layout design to maximize client revenue.</p>
+                <p class="text-muted" style="line-height: 1.7;">We don't sell generic views or vanity clicks. Our systems are engineered to target qualified high-intent buyers and turn them into paying customers.</p>
+                <div class="mt-4">
+                    <a href="about.php" class="btn btn-primary rounded-pill px-4 py-2 fw-bold" style="background: var(--primary); border: none;">Our Agency Story <i class="fas fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 reveal">
-                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
-                    <div class="icon-box icon-red mx-auto mb-3"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <h5 class="fw-bold mb-2">Proven Results</h5>
-                    <p class="text-muted" style="font-size: 0.9rem;">Track record of delivering measurable results — higher rankings, more traffic, better conversions.</p>
-                </div>
+            <div class="col-lg-6 reveal text-center">
+                <img src="assets/hero-graph.png" alt="Marketing Results" class="img-fluid rounded-4 shadow-sm" style="max-height: 400px;">
             </div>
-            <div class="col-md-6 col-lg-3 reveal">
-                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
-                    <div class="icon-box icon-yellow mx-auto mb-3"><i class="fa-regular fa-lightbulb"></i></div>
-                    <h5 class="fw-bold mb-2">Creative Excellence</h5>
-                    <p class="text-muted" style="font-size: 0.9rem;">Stunning designs, compelling content, and innovative marketing that makes your brand stand out.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 reveal">
-                <div class="about-card p-4 bg-white rounded-4 shadow-sm border border-light text-center h-100 transition-all hover-translate-y">
-                    <div class="icon-box icon-green mx-auto mb-3"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h5 class="fw-bold mb-2">Dedicated Support</h5>
-                    <p class="text-muted" style="font-size: 0.9rem;">A dedicated team committed to your success with weekly reports and transparent communication.</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5 reveal">
-            <a href="about.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">
-                Learn More About Us <i class="fas fa-arrow-right ms-2"></i>
-            </a>
         </div>
     </div>
 </section>
 
-<!-- SERVICES SHOWCASE TEASER -->
-<section class="section-padding section-light" id="services">
+<!-- CORE EXPERTISE GRID (WHAT WE DO) -->
+<section class="section-padding section-light" id="expertise">
     <div class="container">
         <div class="section-header text-center reveal">
-            <h2>Our Core <span style="color:var(--primary)">Services</span></h2>
-            <p class="subtitle">Comprehensive digital marketing solutions engineered to help your business grow, scale, and succeed online.</p>
+            <h2>Our Areas of <span style="color:var(--primary)">Expertise</span></h2>
+            <p class="subtitle">We deploy tailored solutions across five key digital channels to scale your business.</p>
             <div class="accent-line mx-auto"></div>
         </div>
-        
-        <div class="row g-4 justify-content-center">
-            <!-- Google Ads Card -->
+        <div class="row g-4 mt-2">
             <div class="col-md-6 col-lg-4 reveal">
-                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
-                    <span class="card-badge">⭐ Main Service</span>
-                    <div class="card-img-wrapper"><img src="Services-posters/google-ads-package.jpeg" alt="Google Ads Agency India" class="w-100"></div>
-                    <div class="card-body p-4">
-                        <h4 class="fw-bold" style="color: var(--navy);">Google Ads Package</h4>
-                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
-                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>3-5 Campaigns (Search + Display)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Conversion Tracking & Remarketing</li>
-                        </ul>
-                        <a href="service-details.php?id=google-ads-package" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
-                    </div>
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-blue mx-auto mb-3"><i class="fab fa-google"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Google Ads Management</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Target high-intent search terms to capture customers exactly when they are ready to purchase.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-
-            <!-- Meta Ads Card -->
             <div class="col-md-6 col-lg-4 reveal">
-                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
-                    <div class="card-img-wrapper"><img src="Services-posters/meta-ad-package.jpeg" alt="Meta Ads Agency India" class="w-100"></div>
-                    <div class="card-body p-4">
-                        <h4 class="fw-bold" style="color: var(--navy);">Meta Ad Package</h4>
-                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
-                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>4-6 Lead / Sales Campaigns</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>A/B Testing & Retargeting</li>
-                        </ul>
-                        <a href="service-details.php?id=meta-ad-package" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
-                    </div>
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-red mx-auto mb-3"><i class="fab fa-meta"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Social Media Campaigns</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Deploy high-converting ad graphics and engaging video reels across Facebook & Instagram.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-
-            <!-- SEO Growth Card -->
             <div class="col-md-6 col-lg-4 reveal">
-                <div class="service-card bg-white rounded-4 shadow-sm border overflow-hidden h-100 transition-all hover-translate-y">
-                    <span class="card-badge" style="background:var(--green)">★ Recommended</span>
-                    <div class="card-img-wrapper"><img src="Services-posters/growth-seo-plan.jpeg" alt="SEO Growth Services India" class="w-100"></div>
-                    <div class="card-body p-4">
-                        <h4 class="fw-bold" style="color: var(--navy);">Growth SEO Plan</h4>
-                        <div class="price-tag fw-extrabold mb-3" style="color: var(--primary); font-size: 1.5rem;">₹15,000 <span class="period text-muted" style="font-size: 0.9rem; font-weight: normal;">/month</span></div>
-                        <ul class="features-mini list-unstyled mb-4 text-muted" style="font-size: 0.95rem;">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>20-30 Target Keywords + On-Page</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>10-15 Quality Backlinks/month</li>
-                        </ul>
-                        <a href="service-details.php?id=growth-seo-plan" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold">See All Details</a>
-                    </div>
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-yellow mx-auto mb-3"><i class="fas fa-magnifying-glass"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Search Engine Optimization</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Rank on the first page of Google to secure consistent, compounding organic search traffic.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-        </div>
-
-        <div class="text-center mt-5 reveal">
-            <a href="services.php" class="btn btn-primary rounded-pill px-5 py-3 fw-bold" style="background-color: var(--primary); border: none;">
-                View All Services & Packages <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING TEASER -->
-<section class="section-padding bg-white" id="pricing-teaser">
-    <div class="container text-center reveal">
-        <div class="section-header text-center reveal">
-            <h2>Pricing & <span style="color:var(--primary)">Packages</span></h2>
-            <p class="subtitle">Transparent pricing with no hidden charges. Choose the plan that fits your business needs.</p>
-            <div class="accent-line mx-auto"></div>
-        </div>
-        <p class="lead text-muted max-w-2xl mx-auto mb-4" style="font-size: 1.1rem;">No hidden setup fees. No lock-in contracts. Pay only for results.</p>
-        <div class="row justify-content-center g-4 mb-5">
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
-                    <h5 class="fw-bold" style="color: var(--navy);">SEO Plans</h5>
-                    <p class="text-muted mb-2">Starting from</p>
-                    <h3 class="fw-extrabold text-primary mb-3">₹8,000<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
-                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View SEO Packages</a>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-green mx-auto mb-3"><i class="fas fa-palette"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Premium Brand Systems</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Build a memorable, high-end brand identity with premium logos, typography, and stationery.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
-                    <h5 class="fw-bold" style="color: var(--navy);">Social Media</h5>
-                    <p class="text-muted mb-2">Starting from</p>
-                    <h3 class="fw-extrabold text-primary mb-3">₹7,999<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
-                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View SMM Packages</a>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-blue mx-auto mb-3"><i class="fas fa-laptop-code"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Web & E-Commerce Design</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Get high-speed, secure corporate websites and conversion-friendly Shopify storefronts.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="bg-light p-4 rounded-4 shadow-sm border-0 transition-all hover-translate-y">
-                    <h5 class="fw-bold" style="color: var(--navy);">Paid Ads</h5>
-                    <p class="text-muted mb-2">Starting from</p>
-                    <h3 class="fw-extrabold text-primary mb-3">₹15,000<span style="font-size: 0.9rem; font-weight: normal; color: var(--gray);">/month</span></h3>
-                    <a href="pricing.php" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 fw-bold">View Campaign Packages</a>
+            <div class="col-md-6 col-lg-4 reveal">
+                <div class="about-card p-4 bg-white rounded-4 shadow-sm h-100 text-center transition-all hover-translate-y">
+                    <div class="icon-box icon-red mx-auto mb-3"><i class="fas fa-chart-line"></i></div>
+                    <h5 class="fw-bold mb-3" style="color: var(--navy);">Marketplace Management</h5>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">List and manage your brand listings and sponsored advertising on Amazon, Flipkart & Meesho.</p>
+                    <a href="services.php" class="text-primary text-decoration-none fw-bold" style="font-size: 0.9rem;">Learn More <i class="fas fa-chevron-right ms-1"></i></a>
                 </div>
             </div>
-        </div>
-        <a href="pricing.php" class="btn btn-primary rounded-pill px-5 py-3 fw-bold" style="background-color: var(--primary); border: none;">
-            Compare All Packages <i class="fas fa-chevron-right ms-2"></i>
-        </a>
-    </div>
-</section>
-
-<!-- LATEST BLOG SHOWCASE -->
-<section class="section-padding section-light" id="blog">
-    <div class="container">
-        <div class="section-header text-center reveal">
-            <h2>Latest from Our <span style="color:var(--primary)">Blog</span></h2>
-            <p class="subtitle">Tips, insights, and strategies to help you stay ahead in the digital marketing game.</p>
-            <div class="accent-line mx-auto"></div>
-        </div>
-        <div class="row g-4">
-            <?php if (empty($latest_blogs)): ?>
-                <div class="col-12 text-center reveal">
-                    <p class="lead" style="color: var(--gray);">No blog posts found. Check back later!</p>
-                </div>
-            <?php else: ?>
-                <?php foreach ($latest_blogs as $blog): ?>
-                    <?php 
-                    $image_src = htmlspecialchars($blog['image']);
-                    if (!empty($blog['image']) && !preg_match('/^https?:\/\//', $blog['image'])) {
-                        $image_src = 'uploads/blogs/' . htmlspecialchars($blog['image']);
-                    }
-                    ?>
-                    <div class="col-md-6 col-lg-4 reveal">
-                        <div class="blog-card bg-white rounded-4 border shadow-sm overflow-hidden h-100 d-flex flex-column transition-all hover-translate-y">
-                            <div class="blog-img" style="height: 220px; overflow: hidden;"><img src="<?php echo $image_src; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="w-100 h-100 object-fit-cover"></div>
-                            <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-                                <span class="blog-tag mb-2 d-inline-block"><?php echo htmlspecialchars($blog['category']); ?></span>
-                                <h5 class="fw-bold mb-3" style="color: var(--navy);"><?php echo htmlspecialchars($blog['title']); ?></h5>
-                                <p class="text-muted flex-grow-1" style="font-size: 0.95rem;"><?php echo htmlspecialchars($blog['excerpt']); ?></p>
-                                <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>" class="read-more mt-auto fw-bold text-decoration-none" style="color: var(--primary);">Read More <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
         </div>
         <div class="text-center mt-5 reveal">
-            <a href="blog.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">
-                Read All Articles <i class="fas fa-newspaper ms-2"></i>
-            </a>
+            <a href="services.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Explore Our Full Catalog <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
     </div>
 </section>
@@ -348,8 +233,51 @@ include_once __DIR__ . '/includes/header.php';
     </div>
 </section>
 
+<!-- LATEST BLOG SHOWCASE -->
+<section class="section-padding section-light" id="blog">
+    <div class="container">
+        <div class="section-header text-center reveal">
+            <h2>Latest from Our <span style="color:var(--primary)">Blog</span></h2>
+            <p class="subtitle">Tips, insights, and strategies to help you stay ahead in the digital marketing game.</p>
+            <div class="accent-line mx-auto"></div>
+        </div>
+        <div class="row g-4">
+            <?php if (empty($latest_blogs)): ?>
+                <div class="col-12 text-center reveal">
+                    <p class="lead" style="color: var(--gray);">No blog posts found. Check back later!</p>
+                </div>
+            <?php else: ?>
+                <?php foreach ($latest_blogs as $blog): ?>
+                    <?php 
+                    $image_src = htmlspecialchars($blog['image']);
+                    if (!empty($blog['image']) && !preg_match('/^https?:\/\//', $blog['image'])) {
+                        $image_src = 'uploads/blogs/' . htmlspecialchars($blog['image']);
+                    }
+                    ?>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="blog-card bg-white rounded-4 border shadow-sm overflow-hidden h-100 d-flex flex-column transition-all hover-translate-y">
+                            <div class="blog-img" style="height: 220px; overflow: hidden;"><img src="<?php echo $image_src; ?>" alt="<?php echo htmlspecialchars($blog['title']); ?>" class="w-100 h-100 object-fit-cover"></div>
+                            <div class="blog-body p-4 d-flex flex-column flex-grow-1">
+                                <span class="blog-tag mb-2 d-inline-block" style="background-color: var(--primary) !important; color: white !important; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; padding: 4px 10px; border-radius: 5px;"><?php echo htmlspecialchars($blog['category']); ?></span>
+                                <h5 class="fw-bold mb-3" style="color: var(--navy);"><?php echo htmlspecialchars($blog['title']); ?></h5>
+                                <p class="text-muted flex-grow-1" style="font-size: 0.95rem;"><?php echo htmlspecialchars($blog['excerpt']); ?></p>
+                                <a href="blog-detail.php?slug=<?php echo urlencode($blog['slug']); ?>" class="read-more mt-auto fw-bold text-decoration-none" style="color: var(--primary);">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <div class="text-center mt-5 reveal">
+            <a href="blog.php" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">
+                Read All Articles <i class="fas fa-newspaper ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- GENERAL TERMS AGREEMENT ACCORDION -->
-<section class="section-padding bg-light" id="terms">
+<section class="section-padding bg-white" id="terms">
     <div class="container">
         <div class="section-header text-center reveal">
             <h2>Terms & <span style="color:var(--primary)">Conditions</span></h2>
