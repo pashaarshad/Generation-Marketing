@@ -25,14 +25,16 @@
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <h5>Services</h5>
+                    <h5>Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="service-details.php?id=google-ads-package">Google Ads</a></li>
-                        <li><a href="service-details.php?id=growth-seo-plan">SEO Plans</a></li>
-                        <li><a href="service-details.php?id=smm-standard-package">Social Media</a></li>
-                        <li><a href="service-details.php?id=premium-brand-system">Branding</a></li>
-                        <li><a href="service-details.php?id=growth-website-plan">Web Development</a></li>
-                        <li><a href="service-details.php?id=ecommerce-website-setup">E-Commerce</a></li>
+                        <li><a href="service-details.php?id=google-ads-package" title="Google Ads Management Agency">Google Ads Management</a></li>
+                        <li><a href="service-details.php?id=meta-ad-package" title="Meta Facebook Instagram Ad Agency">Meta Ads Agency</a></li>
+                        <li><a href="service-details.php?id=growth-seo-plan" title="Expert SEO Plans India">SEO Growth Plans</a></li>
+                        <li><a href="service-details.php?id=smm-standard-package" title="Social Media Marketing Agency">Social Media Marketing</a></li>
+                        <li><a href="service-details.php?id=premium-brand-system" title="Premium Branding Design">Brand Identity Design</a></li>
+                        <li><a href="service-details.php?id=growth-website-plan" title="Custom Website Development">Website Development</a></li>
+                        <li><a href="service-details.php?id=ecommerce-website-setup" title="E-Commerce Store Setup">E-Commerce Solutions</a></li>
+                        <li><a href="service-details.php?id=starter-marketplace-setup" title="Marketplace Listing Setup">Marketplace Setup</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">

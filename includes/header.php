@@ -67,6 +67,25 @@ if (!empty($query_parts)) {
     <meta name="twitter:description" content="<?php echo htmlspecialchars($page_desc); ?>">
     <meta name="twitter:image" content="<?php echo $protocol . "://" . $host; ?>/assets/logo.png">
     
+    <!-- Advanced SEO & Trust Signals -->
+    <meta name="author" content="Generation Marketing">
+    <meta name="publisher" content="Generation Marketing">
+    <meta name="geo.region" content="IN-RJ">
+    <meta name="geo.placename" content="Jaipur, Rajasthan, India">
+    <meta name="ICBM" content="26.9124, 75.7873">
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="msapplication-TileColor" content="#1a73e8">
+    <meta name="apple-mobile-web-app-title" content="Generation Marketing">
+    <meta name="application-name" content="Generation Marketing">
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="alternate" hreflang="en" href="<?php echo htmlspecialchars($canonical_url); ?>">
+    <link rel="alternate" hreflang="x-default" href="<?php echo htmlspecialchars($canonical_url); ?>">
+    
+    <!-- Speed: DNS Prefetch & Preconnect for CDN Performance (Core Web Vitals) -->
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
     <!-- External Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
