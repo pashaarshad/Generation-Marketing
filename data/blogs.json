@@ -265,5 +265,18 @@
         "status": "published",
         "created_at": "2026-06-22 05:06:39",
         "updated_at": "2026-06-22 05:06:39"
+    },
+    {
+        "id": 22,
+        "title": "Google Display Ads: Building Brand Awareness Online",
+        "slug": "google-display-ads-building-brand-awareness-online-1",
+        "category": "Google Ads",
+        "excerpt": "Learn how Google Display Ads help businesses reach millions of users across websites, apps, and online platforms.",
+        "content": "<p data-start=\"2103\" data-end=\"2330\">Google Display Ads are visual advertisements that appear on websites, mobile apps, and videos within Google's Display Network. These ads can include images, graphics, and interactive elements designed to capture user attention.</p>\r\n<p data-start=\"2332\" data-end=\"2550\">Display Ads are highly effective for increasing brand awareness and reaching new audiences. Businesses can target users based on interests, demographics, browsing behavior, and previous interactions with their website.</p>\r\n<p data-start=\"2552\" data-end=\"2760\">By using attractive creatives and strategic targeting, Display Ads help businesses stay visible throughout the customer journey. They are especially useful for retargeting campaigns and expanding brand reach.</p>",
+        "image": "blog_6a38c2e492aa7.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 05:06:44",
+        "updated_at": "2026-06-22 05:06:44"
     }
 ]
