@@ -122,5 +122,18 @@
         "status": "published",
         "created_at": "2026-06-22 01:43:34",
         "updated_at": "2026-06-22 01:45:03"
+    },
+    {
+        "id": 11,
+        "title": "CBO vs ABO: Choosing the Right Budget Strategy",
+        "slug": "cbo-vs-abo-choosing-the-right-budget-strategy",
+        "category": "Meta Ads",
+        "excerpt": "Understand the difference between Campaign Budget Optimization (CBO) and Ad Set Budget Optimization (ABO) in Meta Ads.",
+        "content": "<p data-start=\"916\" data-end=\"1035\">Meta Ads offers two budget management options: Campaign Budget Optimization (CBO) and Ad Set Budget Optimization (ABO).</p>\r\n<p data-start=\"1037\" data-end=\"1235\">With CBO, Meta automatically distributes the budget across ad sets to achieve the best results. ABO allows advertisers to set a separate budget for each ad set, providing more control over spending.</p>\r\n<p data-start=\"1237\" data-end=\"1335\">Choosing the right strategy depends on your campaign goals, testing requirements, and budget size.</p>",
+        "image": "blog_6a38941af025f.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 01:47:06",
+        "updated_at": "2026-06-22 01:47:06"
     }
 ]
