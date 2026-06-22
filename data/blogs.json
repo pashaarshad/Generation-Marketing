@@ -239,5 +239,18 @@
         "status": "published",
         "created_at": "2026-06-22 05:03:37",
         "updated_at": "2026-06-22 05:03:37"
+    },
+    {
+        "id": 20,
+        "title": "Google Search Ads: Reaching Customers at the Right Time",
+        "slug": "google-search-ads-reaching-customers-at-the-right-time",
+        "category": "Google Ads",
+        "excerpt": "Discover how Google Search Ads help businesses appear in search results and attract high-intent customers.",
+        "content": "<p data-start=\"1168\" data-end=\"1439\">Google Search Ads are text-based advertisements that appear at the top of Google search results when users search for specific keywords. These ads allow businesses to connect with potential customers at the exact moment they are looking for relevant products or services.</p>\r\n<p data-start=\"1441\" data-end=\"1666\">Advertisers bid on keywords related to their business, and Google determines ad placement based on bid amount and ad quality. A well-optimized Search Ad campaign can drive highly targeted traffic and improve conversion rates.</p>\r\n<p data-start=\"1668\" data-end=\"1879\">Because users are actively searching for solutions, Search Ads often deliver strong results and provide a high return on investment. They are ideal for lead generation, service businesses, and e-commerce stores.</p>",
+        "image": "blog_6a38c28793d43.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 05:05:11",
+        "updated_at": "2026-06-22 05:05:11"
     }
 ]
