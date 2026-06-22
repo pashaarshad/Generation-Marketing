@@ -278,5 +278,18 @@
         "status": "published",
         "created_at": "2026-06-22 05:06:44",
         "updated_at": "2026-06-22 05:06:44"
+    },
+    {
+        "id": 23,
+        "title": "Keyword Research for Google Ads: The Key to Better Results",
+        "slug": "keyword-research-for-google-ads-the-key-to-better-results",
+        "category": "Google Ads",
+        "excerpt": "Learn why keyword research is important in Google Ads and how it can improve campaign performance.",
+        "content": "<p data-start=\"2976\" data-end=\"3224\">Keyword research is one of the most important factors in a successful Google Ads campaign. Keywords determine when and where your ads appear in search results. Choosing the right keywords helps attract users who are most likely to become customers.</p>\r\n<p data-start=\"3226\" data-end=\"3432\">Advertisers should focus on relevant, high-intent keywords that closely match their products or services. Long-tail keywords often provide better conversion rates because they target specific user searches.</p>\r\n<p data-start=\"3434\" data-end=\"3647\">Regularly reviewing keyword performance and adding negative keywords can improve campaign efficiency and reduce wasted ad spend. A strong keyword strategy is essential for achieving better results with Google Ads.</p>",
+        "image": "blog_6a38c334ae188.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 05:08:04",
+        "updated_at": "2026-06-22 05:08:04"
     }
 ]
