@@ -213,5 +213,18 @@
         "status": "published",
         "created_at": "2026-06-22 02:03:33",
         "updated_at": "2026-06-22 02:03:33"
+    },
+    {
+        "id": 18,
+        "title": "Link Building: A Powerful SEO Strategy",
+        "slug": "link-building-a-powerful-seo-strategy",
+        "category": "SEO",
+        "excerpt": "Learn how link building improves website authority and helps achieve higher search engine rankings.",
+        "content": "<p data-start=\"2475\" data-end=\"2621\">Link building is the process of acquiring backlinks from other websites. Search engines view quality backlinks as a signal of trust and authority.</p>\r\n<p data-start=\"2623\" data-end=\"2832\" data-is-last-node=\"\" data-is-only-node=\"\">Earning links from reputable websites can improve domain authority, increase organic traffic, and boost search engine rankings. A successful link-building strategy is an important part of long-term SEO growth.</p>",
+        "image": "blog_6a389865ceb36.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 02:05:25",
+        "updated_at": "2026-06-22 02:05:25"
     }
 ]
