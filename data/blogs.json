@@ -148,5 +148,18 @@
         "status": "published",
         "created_at": "2026-06-22 01:48:53",
         "updated_at": "2026-06-22 01:48:53"
+    },
+    {
+        "id": 13,
+        "title": "Important Meta Ads Metrics Every Marketer Should Know",
+        "slug": "important-meta-ads-metrics-every-marketer-should-know",
+        "category": "Meta Ads",
+        "excerpt": "Learn the key Meta Ads metrics that help measure campaign performance and improve advertising results.",
+        "content": "<p data-start=\"2165\" data-end=\"2406\">Tracking the right metrics is essential for running successful Meta Ads campaigns. Important metrics include CTR (Click-Through Rate), CPC (Cost Per Click), CPM (Cost Per Thousand Impressions), ROAS (Return on Ad Spend), and Conversion Rate.</p>\r\n<p data-start=\"2408\" data-end=\"2593\">These metrics provide insights into ad effectiveness, audience engagement, and overall profitability. Regular monitoring helps advertisers optimize campaigns and achieve better results.</p>",
+        "image": "blog_6a3894e042ab4.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 01:50:24",
+        "updated_at": "2026-06-22 01:50:24"
     }
 ]
