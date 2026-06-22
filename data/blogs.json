@@ -109,5 +109,18 @@
         "status": "published",
         "created_at": "2026-06-20 05:48:24",
         "updated_at": "2026-06-20 05:48:24"
+    },
+    {
+        "id": 10,
+        "title": "The Complete Guide to Facebook & Instagram Advertising",
+        "slug": "the-complete-guide-to-facebook-instagram-advertising",
+        "category": "Meta Ads",
+        "excerpt": "Learn how Meta Ads helps businesses reach the right audience, generate leads, increase website traffic, and boost sales through Facebook and Instagram advertising.",
+        "content": "<p data-start=\"307\" data-end=\"567\">Meta Ads is a digital advertising platform that allows businesses to promote their products and services on Facebook, Instagram, Messenger, and Audience Network. It helps brands reach their target audience based on demographics, interests, and online behavior.</p>\r\n<p data-start=\"569\" data-end=\"765\">With Meta Ads, businesses can run campaigns for brand awareness, traffic, lead generation, engagement, and sales. Popular ad formats include image ads, video ads, carousel ads, Stories, and Reels.</p>\r\n<p data-start=\"767\" data-end=\"915\">Features like Meta Pixel, Conversion API, Custom Audiences, and Lookalike Audiences help advertisers track performance and improve campaign results.</p>\r\n<p data-start=\"917\" data-end=\"1049\" data-is-last-node=\"\" data-is-only-node=\"\">Meta Ads is one of the most effective marketing tools for businesses looking to grow their online presence and increase conversions.</p>",
+        "image": "blog_6a3893465be19.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 01:43:34",
+        "updated_at": "2026-06-22 01:43:34"
     }
 ]
