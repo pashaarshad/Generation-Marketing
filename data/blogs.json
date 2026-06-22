@@ -226,5 +226,18 @@
         "status": "published",
         "created_at": "2026-06-22 02:05:25",
         "updated_at": "2026-06-22 02:05:25"
+    },
+    {
+        "id": 19,
+        "title": "What is Google Ads and How Does It Work?",
+        "slug": "what-is-google-ads-and-how-does-it-work",
+        "category": "Google Ads",
+        "excerpt": "Learn what Google Ads is, how it works, and how businesses can use it to drive traffic, leads, and sales online.",
+        "content": "<p data-start=\"205\" data-end=\"478\">Google Ads is Google's online advertising platform that allows businesses to promote their products and services across Google Search, YouTube, Gmail, and partner websites. It works on a pay-per-click (PPC) model, where advertisers pay only when someone clicks on their ad.</p>\r\n<p data-start=\"480\" data-end=\"737\">Businesses can target potential customers based on keywords, location, demographics, and user behavior. Google Ads helps brands reach people who are actively searching for products or services, making it one of the most effective digital marketing channels.</p>\r\n<p data-start=\"739\" data-end=\"947\">With proper targeting and optimization, Google Ads can increase website traffic, generate high-quality leads, and boost sales. It is suitable for businesses of all sizes looking to grow their online presence.</p>",
+        "image": "blog_6a38c22956ec4.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 05:03:37",
+        "updated_at": "2026-06-22 05:03:37"
     }
 ]
