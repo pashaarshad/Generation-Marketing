@@ -174,5 +174,18 @@
         "status": "published",
         "created_at": "2026-06-22 01:58:59",
         "updated_at": "2026-06-22 01:58:59"
+    },
+    {
+        "id": 15,
+        "title": "On-Page SEO: The Foundation of Higher Rankings",
+        "slug": "on-page-seo-the-foundation-of-higher-rankings",
+        "category": "SEO",
+        "excerpt": "Discover the key elements of On-Page SEO and how they help improve search engine rankings.",
+        "content": "<p data-start=\"846\" data-end=\"1066\">On-Page SEO focuses on optimizing individual web pages to rank better on search engines. Important factors include keyword placement, title tags, meta descriptions, heading tags, image optimization, and internal linking.</p>\r\n<p data-start=\"1068\" data-end=\"1190\">By following On-Page SEO best practices, websites can improve search visibility, user experience, and overall performance.</p>",
+        "image": "blog_6a38973dd6a8f.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 02:00:29",
+        "updated_at": "2026-06-22 02:00:29"
     }
 ]
