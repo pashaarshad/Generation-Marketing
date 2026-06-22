@@ -200,5 +200,18 @@
         "status": "published",
         "created_at": "2026-06-22 02:01:57",
         "updated_at": "2026-06-22 02:01:57"
+    },
+    {
+        "id": 17,
+        "title": "Technical SEO: Improving Website Performance",
+        "slug": "technical-seo-improving-website-performance",
+        "category": "SEO",
+        "excerpt": "Understand the basics of Technical SEO and how it helps search engines crawl and index your website.",
+        "content": "<p data-start=\"1954\" data-end=\"2148\">Technical SEO focuses on optimizing a website's structure and performance. Key elements include website speed, mobile responsiveness, XML sitemaps, secure HTTPS connections, and proper indexing.</p>\r\n<p data-start=\"2150\" data-end=\"2278\">A technically optimized website provides a better user experience and increases the chances of ranking higher in search results.</p>",
+        "image": "blog_6a3897f53541f.jpg",
+        "author": "Generation Marketing",
+        "status": "published",
+        "created_at": "2026-06-22 02:03:33",
+        "updated_at": "2026-06-22 02:03:33"
     }
 ]
